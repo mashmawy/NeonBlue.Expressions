@@ -1,4 +1,4 @@
-namespace NeonBlue.Expressions.Exceptions
+namespace NeonBlue.Expressions
 {
     [Serializable]
     public class InvalidArgumentTypeExeception : Exception

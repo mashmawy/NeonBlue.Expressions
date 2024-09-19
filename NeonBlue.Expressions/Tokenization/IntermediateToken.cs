@@ -1,4 +1,4 @@
-namespace NeonBlue.Expressions.Tokenization
+namespace NeonBlue.Expressions
 {
     /// <summary>
     /// Represents a token in an intermediate representation of an expression.

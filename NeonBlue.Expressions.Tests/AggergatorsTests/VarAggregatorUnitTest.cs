@@ -1,5 +1,5 @@
 using NeonBlue.Expressions.Aggregates.Aggergators;
-using NeonBlue.Expressions.Exceptions;
+using NeonBlue.Expressions;
 
 namespace NeonBlue.Expressions.Tests.AggergatorsTests;
 public class VarAggregatorUnitTest

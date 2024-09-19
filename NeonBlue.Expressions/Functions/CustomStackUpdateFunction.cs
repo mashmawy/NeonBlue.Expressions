@@ -1,5 +1,5 @@
 using System.Reflection;
-using NeonBlue.Expressions.Exceptions;
+using NeonBlue.Expressions;
 using NeonBlue.Expressions;
 using NeonBlue.Expressions.Functions.MathFunctions;
 

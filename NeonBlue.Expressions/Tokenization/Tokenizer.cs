@@ -2,7 +2,7 @@
 using NeonBlue.Expressions;
 using NeonBlue.Expressions.Functions;
 
-namespace NeonBlue.Expressions.Tokenization
+namespace NeonBlue.Expressions
 {
     /// <summary>
     /// A tokenizer that breaks down an expression into a list of tokens.

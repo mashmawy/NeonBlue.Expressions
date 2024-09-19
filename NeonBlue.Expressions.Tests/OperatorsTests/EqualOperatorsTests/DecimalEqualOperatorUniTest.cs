@@ -1,4 +1,4 @@
-using NeonBlue.Expressions.Exceptions;
+using NeonBlue.Expressions;
 using NeonBlue.Expressions;
 using NeonBlue.Expressions.Operators;
 

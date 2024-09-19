@@ -1,5 +1,5 @@
 ﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions.Exceptions;
+using NeonBlue.Expressions;
 using NeonBlue.Expressions.Functions;
 
 namespace NeonBlue.Expressions.Functions.CastingFunctions

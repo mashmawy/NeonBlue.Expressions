@@ -1,5 +1,5 @@
 using NeonBlue.Expressions;
-using NeonBlue.Expressions.Exceptions;
+using NeonBlue.Expressions;
 
 namespace NeonBlue.Expressions.Functions.MathFunctions
 {

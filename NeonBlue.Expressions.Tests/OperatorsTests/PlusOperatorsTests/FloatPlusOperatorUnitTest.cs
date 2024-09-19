@@ -1,5 +1,5 @@
 
-using NeonBlue.Expressions.Exceptions;
+using NeonBlue.Expressions;
 using NeonBlue.Expressions;
 using NeonBlue.Expressions.Operators;
 namespace NeonBlue.Expressions.Tests.OperatorsTests.PlusOperatorsTests;

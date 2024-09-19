@@ -1,4 +1,4 @@
-﻿using NeonBlue.Expressions.Exceptions;
+﻿using NeonBlue.Expressions;
 
 namespace NeonBlue.Expressions.Aggregates.Aggergators
 { 
