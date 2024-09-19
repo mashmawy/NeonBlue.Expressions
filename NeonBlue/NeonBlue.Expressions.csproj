@@ -5,5 +5,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags> Expression Evaluator </PackageTags>
+    <RepositoryUrl> https://github.com/mashmawy/NeonBlue.Expressions.git </RepositoryUrl>
+    <PackageDescription> Expression Evaluator C#.NET 8.0 library designed to efficiently evaluate expressions. It offers a streamlined solution for.NET developers seeking to avoid the overhead of traditional expression evaluation methods. </PackageDescription>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE.txt" Pack="true" PackagePath=""/>
+    <None Include="..\README.md" Pack="true" PackagePath=""/>
+  </ItemGroup>
 </Project>
