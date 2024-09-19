@@ -14,9 +14,12 @@ Also existing expression evaluation libraries often face limitations in handling
 * **.NET 8 Compatibility:** Built on the latest .NET framework, ensuring compatibility and access to modern features.
 * **Ease of Use:** A straightforward API simplifies integration into .NET applications.
 
+4. **Installation:**
+```bash
+   dotnet add package NeonBlue.Expressions
+```
 
-
-4. **Basic usage:**
+5. **Basic usage:**
 ```c#
         //creating the expression.
         Expression expression = "-1 + (-sum(x )+countd(x2) + (y -2) ) ";
@@ -39,7 +42,7 @@ Also existing expression evaluation libraries often face limitations in handling
 ```
 
 
-5. **Adding custom function:**
+6. **Adding custom function:**
 ```c#
         //creating the expression.
         Expression expression = "multiarg(y,maDate,b)";
@@ -69,6 +72,7 @@ Also existing expression evaluation libraries often face limitations in handling
         Console.WriteLine($"the result of the expression is ({result})");
 ```
 
+7. **Built-in Functions:**
 String Functions :
 
 | Function   Name | Arguments                          | Return Value          | Example                                   |
@@ -184,7 +188,7 @@ Aggregate Functions:
 | mean            | Column name                        | Numeric               | mean(sales)                               |
 
 
-Operators:
+8. **Operators:**
 
 | Category   | Operator | Meaning                                                 | Example          |
 |------------|----------|---------------------------------------------------------|------------------|
@@ -204,7 +208,7 @@ Operators:
 | Logical    | "\|\|"   | Logical OR                                              | x > 0 \|\| y > 0 |
 | Logical    | !        | Logical NOT                                             | !x               | 
 
-6. **Roadmap:**
+9. **Roadmap:**
 
 - Further Unit and Functional Testing
 
@@ -214,10 +218,8 @@ Operators:
 
 - Add User Defined Aggregate Functions Feature
 
-7. **License**
+10. **License**
 
 NeonBlue.Expressions is licensed under the MIT License and the Apache License, Version 2.0 (the "Licenses"). You may obtain a copy of the MIT License at https://opensource.org/license/mit and the Apache License, Version 2.0 at https://www.apache.org/licenses/LICENSE-2.0.
 
-Unless required by applicable law or agreed to in writing, software distributed   
- under the Licenses is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licenses for the specific language governing permissions and limitations under the   
- Licenses.
+Unless required by applicable law or agreed to in writing, software distributed under the Licenses is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licenses for the specific language governing permissions and limitations under the Licenses.
