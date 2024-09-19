@@ -1,16 +1,16 @@
-## **Alchemy: A Lightweight and Fast Expression Evaluator**
+## **NeonBlue.Expressions: A Lightweight and Fast Expression Evaluator**
 
 1. **Description:**
-Alchemy is a .NET 8.0 C# library designed to efficiently evaluate expressions. It offers a streamlined solution for .NET developers seeking to avoid the overhead of traditional expression evaluation methods.
+NeonBlue.Expressions is a .NET 8.0 C# library designed to efficiently evaluate expressions. It offers a streamlined solution for .NET developers seeking to avoid the overhead of traditional expression evaluation methods.
 
 2. **Motivation:**
-Existing expression evaluation libraries often rely on intermediaries like JavaScript engines or .NET expression trees, introducing additional layers of processing. Alchemy aims to eliminate this overhead by providing a direct, interpreter-based approach.
+Existing expression evaluation libraries often rely on intermediaries like JavaScript engines or .NET expression trees, introducing additional layers of processing. NeonBlue.Expressions aims to eliminate this overhead by providing a direct, interpreter-based approach.
 Also existing expression evaluation libraries often face limitations in handling aggregate functions for large datasets. Traditional approaches iterate over each array or list separately, leading to inefficient performance. .
 
 3. **Key Features:**
-* **Direct Interpretation:** Alchemy's interpreter directly executes expressions, minimizing computational overhead.
-* **Efficient Aggregate Functions:** Alchemy's optimized aggregation technique significantly improves performance when working with large datasets.
-* **Lightweight and Fast:** Designed for performance, Alchemy is optimized for efficient expression evaluation.
+* **Direct Interpretation:** NeonBlue.Expressions's interpreter directly executes expressions, minimizing computational overhead.
+* **Efficient Aggregate Functions:** NeonBlue.Expressions's optimized aggregation technique significantly improves performance when working with large datasets.
+* **Lightweight and Fast:** Designed for performance, NeonBlue.Expressions is optimized for efficient expression evaluation.
 * **.NET 8 Compatibility:** Built on the latest .NET framework, ensuring compatibility and access to modern features.
 * **Ease of Use:** A straightforward API simplifies integration into .NET applications.
 
@@ -19,7 +19,7 @@ Also existing expression evaluation libraries often face limitations in handling
 4. **Basic usage:**
 ```c#
         //creating the expression.
-        AlchemyExpression alchemyExpression = "-1 + (-sum(x )+countd(x2) + (y -2) ) ";
+        Expression expression = "-1 + (-sum(x )+countd(x2) + (y -2) ) ";
     
         //define values.
         double[] x = [2, 2];
@@ -32,7 +32,7 @@ Also existing expression evaluation libraries often face limitations in handling
         var evaluator = new Evaluator(new ExecutionOptions(NullStrategy.Throw));
 
         //evaluate the expression given the parameters and expect double result.
-        var result = evaluator.Evaluate<double?>(alchemyExpression,paramaters);
+        var result = evaluator.Evaluate<double?>(expression,paramaters);
 
         //display the result
         Console.WriteLine($"the result of the expression is ({result})");
@@ -42,7 +42,7 @@ Also existing expression evaluation libraries often face limitations in handling
 5. **Adding custom function:**
 ```c#
         //creating the expression.
-        AlchemyExpression alchemyExpression = "multiarg(y,maDate,b)";
+        Expression expression = "multiarg(y,maDate,b)";
         
         //creating the evaluator object.
         var evaluator = new Evaluator(new ExecutionOptions(NullStrategy.Throw));
@@ -63,7 +63,7 @@ Also existing expression evaluation libraries often face limitations in handling
         new ExpressionParameters(new ExpressionParameter("y", y),new ExpressionParameter("b", b),new ExpressionParameter("maDate", maDate));
 
         //evaluate the expression given the parameters and expect string result.
-        var result = evaluator.Evaluate<string?>(alchemyExpression,paramaters);
+        var result = evaluator.Evaluate<string?>(expression,paramaters);
 
         //display the result
         Console.WriteLine($"the result of the expression is ({result})");
@@ -83,7 +83,7 @@ Also existing expression evaluation libraries often face limitations in handling
 
 7. **License**
 
-Alchemy is licensed under the MIT License and the Apache License, Version 2.0 (the "Licenses"). You may obtain a copy of the MIT License at https://opensource.org/license/mit and the Apache License, Version 2.0 at https://www.apache.org/licenses/LICENSE-2.0.
+NeonBlue.Expressions is licensed under the MIT License and the Apache License, Version 2.0 (the "Licenses"). You may obtain a copy of the MIT License at https://opensource.org/license/mit and the Apache License, Version 2.0 at https://www.apache.org/licenses/LICENSE-2.0.
 
 Unless required by applicable law or agreed to in writing, software distributed   
  under the Licenses is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licenses for the specific language governing permissions and limitations under the   
