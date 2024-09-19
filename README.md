@@ -1,6 +1,6 @@
 ## **NeonBlue.Expressions: A Lightweight and Fast Expression Evaluator**
 
-## Important Notes
+**Important Notes**
 I'm always looking to improve my open-source library. If you've encountered any issues, limitations, or have suggestions for new features, please don't hesitate to share your thoughts. Your feedback is invaluable in helping me make this library even better.
 
 1. **Description:**
