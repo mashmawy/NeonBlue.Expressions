@@ -196,8 +196,7 @@ Aggregate Functions:
 | Arithmetic | +        | Addition                                                | 5 + 3            |
 | Arithmetic | %        | Modulus   (remainder)                                   | 5 % 3            |
 | Arithmetic | /        | Division                                                | 5 / 3            |
-| Arithmetic | *        | Multiplication                                          | 5 * 3            |
-| Comparison | "="      | Assignment                                              | x = 5            |
+| Arithmetic | *        | Multiplication                                          | 5 * 3            | 
 | Comparison | "=="     | Equality   comparison                                   | x == 5           |
 | Comparison | !=       | Inequality comparison                                   | x != 5           |
 | Comparison | >        | Greater than                                            | x > 5            |
