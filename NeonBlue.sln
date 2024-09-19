@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeonBlue.Expressions", "NeonBlue\NeonBlue.Expressions.csproj", "{DA36A821-D418-45DE-92CB-C50BCBAE4C72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeonBlue.Expressions", "NeonBlue.Expressions\NeonBlue.Expressions.csproj", "{DA36A821-D418-45DE-92CB-C50BCBAE4C72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeonBlue.Expressions.Tests", "NeonBlue.Tests\NeonBlue.Expressions.Tests.csproj", "{0570E472-4FEB-49E7-AF4F-66EED9E3CD02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeonBlue.Expressions.Tests", "NeonBlue.Expressions.Tests\NeonBlue.Expressions.Tests.csproj", "{0570E472-4FEB-49E7-AF4F-66EED9E3CD02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

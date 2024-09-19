@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NeonBlue\NeonBlue.Expressions.csproj" />
+    <ProjectReference Include="..\NeonBlue.Expressions\NeonBlue.Expressions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
