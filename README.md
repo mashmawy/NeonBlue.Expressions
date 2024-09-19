@@ -184,33 +184,25 @@ Aggregate Functions:
 | mean            | Column name                        | Numeric               | mean(sales)                               |
 
 
-Arithmetic Operators:
+Operators:
 
-| Operator | Meaning                                                 | Example          |
-|----------|---------------------------------------------------------|------------------|
-| -        | Subtraction                                             | 5 - 3            |
-| +        | Addition                                                | 5 + 3            |
-| %        | Modulus   (remainder)                                   | 5 % 3            |
-| /        | Division                                                | 5 / 3            |
-| *        | Multiplication                                          | 5 * 3            |
-
-Comparison Operators: 
-
-| Operator | Meaning                                                 | Example          |
-|  ==      | Equality   comparison                                   | x == 5           |
-| !=       | Inequality comparison                                   | x != 5           |
-| >        | Greater than                                            | x > 5            |
-| <        | Less than                                               | x < 5            |
-| <=       | Less than or   equal to                                 | x <= 5           |
-| >=       | Greater than or equal to                                | x >= 5           |
-
-Logical Operators:
-
-| Operator | Meaning                                                 | Example          |
-| &&       | Logical AND                                             | x > 0   && y > 0 |
-| ||       | Logical OR                                              | x > 0   || y > 0 |
-| !        | Logical NOT                                             | !x               | 
-
+| Category   | Operator | Meaning                                                 | Example          |
+|------------|----------|---------------------------------------------------------|------------------|
+| Arithmetic | -        | Subtraction                                             | 5 - 3            |
+| Arithmetic | +        | Addition                                                | 5 + 3            |
+| Arithmetic | %        | Modulus   (remainder)                                   | 5 % 3            |
+| Arithmetic | /        | Division                                                | 5 / 3            |
+| Arithmetic | *        | Multiplication                                          | 5 * 3            |
+| Comparison | "="      | Assignment                                              | x = 5            |
+| Comparison | "=="     | Equality   comparison                                   | x == 5           |
+| Comparison | !=       | Inequality comparison                                   | x != 5           |
+| Comparison | >        | Greater than                                            | x > 5            |
+| Comparison | <        | Less than                                               | x < 5            |
+| Comparison | <=       | Less than or   equal to                                 | x <= 5           |
+| Comparison | >=       | Greater than or equal to                                | x >= 5           |
+| Logical    | &&       | Logical AND                                             | x > 0   && y > 0 |
+| Logical    | "\|\|"   | Logical OR                                              | x > 0 \|\| y > 0 |
+| Logical    | !        | Logical NOT                                             | !x               | 
 
 6. **Roadmap:**
 
