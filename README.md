@@ -92,6 +92,8 @@ String Functions :
 
 Mathematical Functions:
 
+| Function   Name | Arguments                          | Return Value          | Example                                   |
+|-----------------|------------------------------------|-----------------------|-------------------------------------------|
 | abs             | numeric                            | Numeric               | abs(-5)                                   |
 | acos            | numeric (-1 to 1)                  | Numeric (radians)     | acos(0.5)                                 |
 | acosh           | numeric (>=   1)                   | Numeric               | acosh(1.5)                                |
@@ -120,6 +122,8 @@ Mathematical Functions:
 
 Logical Functions:
 
+| Function   Name | Arguments                          | Return Value          | Example                                   |
+|-----------------|------------------------------------|-----------------------|-------------------------------------------|
 | isnull          | value                              | Boolean               | isnull(null)                              |
 | not             | boolean                            | Boolean               | not(true)                                 |
 | iif             | condition, true_value, false_value | Any                   | iif(true, "yes", "no")                    |
@@ -128,6 +132,8 @@ Logical Functions:
 
 Date/Time Functions:
 
+| Function   Name | Arguments                          | Return Value          | Example                                   |
+|-----------------|------------------------------------|-----------------------|-------------------------------------------|
 | minutesdiff     | datetime,   datetime               | Integer               | minutesdiff("2023-01-01",   "2023-01-02") |
 | hourdiff        | datetime, datetime                 | Integer               | hourdiff("2023-01-01", "2023-01-02")      |
 | daydiff         | datetime,   datetime               | Integer               | daydiff("2023-01-01",   "2023-01-02")     |
@@ -149,6 +155,8 @@ Date/Time Functions:
 
 Conversion Functions:
 
+| Function   Name | Arguments                          | Return Value          | Example                                   |
+|-----------------|------------------------------------|-----------------------|-------------------------------------------|
 | cstring         | any                                | String                | cstring(123)                              |
 | cbyte           | any                                | Byte                  | cbyte(128)                                |
 | cdatetime       | any                                | Datetime              | cdatetime("2023-01-01")                   |
@@ -161,6 +169,8 @@ Conversion Functions:
 
 Aggregate Functions:
 
+| Function   Name | Arguments                          | Return Value          | Example                                   |
+|-----------------|------------------------------------|-----------------------|-------------------------------------------|
 | sum             | Column name                        | Numeric               | sum(sales)                                |
 | count           | Column name                        | Any data type         | count(sales)                              |
 | countd          | Column name                        | Any data type         | countd(sales)                             |
@@ -183,14 +193,20 @@ Arithmetic Operators:
 | %        | Modulus   (remainder)                                   | 5 % 3            |
 | /        | Division                                                | 5 / 3            |
 | *        | Multiplication                                          | 5 * 3            |
-erators: 
+
+Comparison Operators: 
+
+| Operator | Meaning                                                 | Example          |
 |  ==      | Equality   comparison                                   | x == 5           |
 | !=       | Inequality comparison                                   | x != 5           |
 | >        | Greater than                                            | x > 5            |
 | <        | Less than                                               | x < 5            |
 | <=       | Less than or   equal to                                 | x <= 5           |
 | >=       | Greater than or equal to                                | x >= 5           |
-tors:
+
+Logical Operators:
+
+| Operator | Meaning                                                 | Example          |
 | &&       | Logical AND                                             | x > 0   && y > 0 |
 | ||       | Logical OR                                              | x > 0   || y > 0 |
 | !        | Logical NOT                                             | !x               | 
