@@ -25,7 +25,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
         {
             AtanFunction atanFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              atanFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

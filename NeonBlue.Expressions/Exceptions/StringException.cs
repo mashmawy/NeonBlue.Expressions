@@ -1,8 +1,10 @@
+using System.Runtime.Serialization;
+
 namespace NeonBlue.Expressions
 {
     [Serializable]
     public class StringException : Exception
-    {
+    { 
         public StringException(string functionName)
         {
             FunctionName = functionName;

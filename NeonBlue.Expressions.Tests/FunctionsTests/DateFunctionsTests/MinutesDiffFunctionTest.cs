@@ -29,7 +29,7 @@ public class MinutesDiffFunctionTest
         MinutesDiffFunction minuteDiffFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             minuteDiffFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

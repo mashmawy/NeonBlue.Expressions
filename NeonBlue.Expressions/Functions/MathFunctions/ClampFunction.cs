@@ -11,7 +11,7 @@ namespace NeonBlue.Expressions.Functions.MathFunctions
         {
             if (x is null || x.Count < 3)
             {
-                throw new EmptyStackExecption();
+                throw new EmptyStackException();
             }
 
             var arg3 = x.Pop();

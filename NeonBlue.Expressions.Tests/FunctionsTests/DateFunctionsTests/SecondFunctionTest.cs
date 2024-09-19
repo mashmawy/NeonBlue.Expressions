@@ -28,7 +28,7 @@ public class SecondsFunctionTest
     {
         SecondsFunction secondFunction = new();
         Stack<Token> tokens = new();
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             secondFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

@@ -25,7 +25,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
         {
             CeilingFunction ceilingFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              ceilingFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

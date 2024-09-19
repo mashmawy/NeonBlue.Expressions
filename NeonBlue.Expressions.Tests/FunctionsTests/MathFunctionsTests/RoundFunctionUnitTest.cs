@@ -26,7 +26,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
         {
             RoundFunction roundFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              roundFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

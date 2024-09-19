@@ -30,7 +30,7 @@ public class DayNameFunctionTest
     {
         DayNameFunction dayNameFunction = new();
         Stack<Token> tokens = new();
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             dayNameFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

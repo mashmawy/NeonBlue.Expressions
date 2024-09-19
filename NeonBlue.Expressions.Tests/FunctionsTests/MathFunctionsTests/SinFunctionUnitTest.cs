@@ -25,7 +25,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
         {
             SinFunction sinFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              sinFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

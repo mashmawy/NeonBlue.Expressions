@@ -25,7 +25,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
         {
             LogFunction logFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              logFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

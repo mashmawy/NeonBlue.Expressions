@@ -11,7 +11,7 @@ namespace NeonBlue.Expressions.Functions.StringFunctions
         {
             if (x is null || x.Count < 1)
             {
-                throw new EmptyStackExecption();
+                throw new EmptyStackException();
             }
             var token1 = x.Pop();
             if (StringFunctionsHelper.NullCheck(x, token1, executionOptions)) return;

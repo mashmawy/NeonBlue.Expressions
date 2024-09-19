@@ -12,7 +12,7 @@ namespace NeonBlue.Expressions.Functions.BooleanFunctions
         {
             if (x == null || x.Count < 2)
             {
-                throw new EmptyStackExecption();
+                throw new EmptyStackException();
             }
             var token2 = x.Pop();
             var token1 = x.Pop();

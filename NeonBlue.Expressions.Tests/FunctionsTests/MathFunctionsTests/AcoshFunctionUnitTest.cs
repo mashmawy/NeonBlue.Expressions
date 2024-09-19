@@ -25,7 +25,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
         {
             AcoshFunction acoshFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              acoshFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

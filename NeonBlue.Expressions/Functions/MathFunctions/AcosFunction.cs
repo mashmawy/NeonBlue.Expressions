@@ -13,7 +13,7 @@ namespace NeonBlue.Expressions.Functions.MathFunctions
 
             if (x is null || x.Count < 1)
             {
-                throw new EmptyStackExecption();
+                throw new EmptyStackException();
             }
             var token = x.Pop();
             if (MathFunctionUtils.NullCheck(x, token, executionOptions.NullStrategy)) return;

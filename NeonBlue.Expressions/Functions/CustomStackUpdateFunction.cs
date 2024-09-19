@@ -23,7 +23,7 @@ namespace NeonBlue.Expressions.Functions
         {
             if (x == null || x.Count < _parameters.Length)
             {
-                throw new EmptyStackExecption();
+                throw new EmptyStackException();
             }
 
             object?[] argumentStack = new object[_parameters.Length];

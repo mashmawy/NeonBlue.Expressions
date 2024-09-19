@@ -15,7 +15,7 @@ namespace NeonBlue.Expressions.Functions.CastingFunctions
         {
             if (x is null || x.Count < 1)
             {
-                throw new EmptyStackExecption();
+                throw new EmptyStackException();
             }
             var arg1 = x.Pop();
             if (CastingFunctionsUtils.NullCheck(x, arg1, new Token(false, TokenType.Boolean), executionOptions))

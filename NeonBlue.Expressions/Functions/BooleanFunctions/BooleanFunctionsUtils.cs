@@ -28,7 +28,7 @@ namespace NeonBlue.Expressions.Functions.BooleanFunctions
         {
             if (x == null)
             {
-                throw new EmptyStackExecption();
+                throw new EmptyStackException();
             }
             if (token.TokenType == TokenType.NULL)
             {

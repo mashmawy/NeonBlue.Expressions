@@ -31,7 +31,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
         {
             ReplaceFunction replaceFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
             {
                 replaceFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

@@ -31,7 +31,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
         {
             SubstringFunction substringFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              substringFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

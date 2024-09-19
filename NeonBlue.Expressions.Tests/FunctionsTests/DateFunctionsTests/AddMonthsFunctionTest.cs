@@ -29,7 +29,7 @@ public class AddMonthsFunctionTest
         AddMonthsFunction addMonthsFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             addMonthsFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

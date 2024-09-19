@@ -27,7 +27,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
         {
             PowFunction powFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              powFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

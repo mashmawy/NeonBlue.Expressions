@@ -30,7 +30,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
         {
             ContainFunction containFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              containFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

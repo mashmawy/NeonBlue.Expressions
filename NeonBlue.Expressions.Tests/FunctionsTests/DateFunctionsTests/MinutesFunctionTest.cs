@@ -29,7 +29,7 @@ public class MinutesFunctionTest
     {
         MinutesFunction minutesFunction = new();
         Stack<Token> tokens = new();
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             minutesFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

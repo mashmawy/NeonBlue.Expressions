@@ -31,7 +31,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
         {
             PadLeftFunction padLeftFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
             {
                 padLeftFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

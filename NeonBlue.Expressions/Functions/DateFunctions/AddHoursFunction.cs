@@ -12,7 +12,7 @@ namespace NeonBlue.Expressions.Functions.DateFunctions
         {
             if (x is null || x.Count < 2)
             {
-                throw new EmptyStackExecption();
+                throw new EmptyStackException();
             }
             var token2 = x.Pop();
             var token1 = x.Pop();

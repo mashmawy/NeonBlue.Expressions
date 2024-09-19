@@ -28,7 +28,7 @@ public class YearFunctionTest
     {
         YearFunction yearFunction = new();
         Stack<Token> tokens = new();
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             yearFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

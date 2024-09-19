@@ -29,7 +29,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
         {
             RTrimFunction rtrimFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              rtrimFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

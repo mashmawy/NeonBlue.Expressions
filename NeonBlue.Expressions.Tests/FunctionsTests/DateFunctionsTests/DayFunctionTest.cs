@@ -27,7 +27,7 @@ public class DayFunctionTest
     {
         DayFunction dayFunction = new();
         Stack<Token> tokens = new();
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             dayFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

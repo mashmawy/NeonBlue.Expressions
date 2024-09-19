@@ -64,7 +64,7 @@ public class IIFFunctionTest
         tokens.Push(new Token(true, TokenType.Boolean));
         tokens.Push(new Token(10, TokenType.Integer));
 
-        Assert.Throws<EmptyStackExecption>(() => iIFFunction
+        Assert.Throws<EmptyStackException>(() => iIFFunction
         .Update(tokens, new ExecutionOptions(NullStrategy.Throw)));
 
 

@@ -29,7 +29,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
         {
             RightFunction rightFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              rightFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

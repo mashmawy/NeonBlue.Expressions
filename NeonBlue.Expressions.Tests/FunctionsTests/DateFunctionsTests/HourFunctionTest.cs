@@ -28,7 +28,7 @@ public class HourFunctionTest
     {
         HourFunction hourFunction = new();
         Stack<Token> tokens = new();
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             hourFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

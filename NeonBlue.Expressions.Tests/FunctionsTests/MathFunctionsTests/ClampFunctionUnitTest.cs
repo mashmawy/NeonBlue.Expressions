@@ -28,7 +28,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
         {
             ClampFunction clampFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              clampFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

@@ -31,7 +31,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.DateFunctionsTests
         {
             MonthNameFunction monthNameFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
             {
                 monthNameFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

@@ -29,7 +29,7 @@ public class AddYearsFunctionTest
         AddYearsFunction addYearsFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             addYearsFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

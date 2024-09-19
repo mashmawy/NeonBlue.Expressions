@@ -26,7 +26,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
         {
             TruncateFunction turncateFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              turncateFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

@@ -48,7 +48,7 @@ public class QuarterNameFunctionTest
     {
         QuarterNameFunction quarterNameFunction = new();
         Stack<Token> tokens = new();
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             quarterNameFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

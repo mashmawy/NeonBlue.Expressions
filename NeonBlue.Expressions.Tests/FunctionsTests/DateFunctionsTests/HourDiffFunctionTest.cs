@@ -29,7 +29,7 @@ public class HourDiffFunctionTest
         HourDiffFunction hourDiffFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             hourDiffFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

@@ -28,7 +28,7 @@ public class MonthFunctionTest
     {
         MonthFunction monthFunction = new();
         Stack<Token> tokens = new();
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             monthFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

@@ -30,7 +30,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
         {
             ConcatFunction concatFunction = new();
             Stack<Token> tokens = new();
-            Assert.Throws<EmptyStackExecption>(() =>
+            Assert.Throws<EmptyStackException>(() =>
          {
              concatFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });

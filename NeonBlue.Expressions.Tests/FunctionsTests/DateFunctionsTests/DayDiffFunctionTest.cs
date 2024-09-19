@@ -29,7 +29,7 @@ public class DayDiffFunctionTest
         DayDiffFunction dayDiffFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             dayDiffFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

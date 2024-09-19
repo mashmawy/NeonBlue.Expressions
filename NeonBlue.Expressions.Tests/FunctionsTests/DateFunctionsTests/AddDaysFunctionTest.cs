@@ -29,7 +29,7 @@ public class AddDaysFunctionTest
         AddDaysFunction addDaysFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<EmptyStackExecption>(() =>
+        Assert.Throws<EmptyStackException>(() =>
         {
             addDaysFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });
