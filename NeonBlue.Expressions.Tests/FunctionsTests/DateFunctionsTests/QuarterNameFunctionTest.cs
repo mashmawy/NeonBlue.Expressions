@@ -21,7 +21,7 @@ public class QuarterNameFunctionTest
         Assert.Equal(GetQuarterName(testVal), Convert.ToString(result.Value));
     }
 
-    private string GetQuarterName(DateTime dateTime)
+    private static string GetQuarterName(DateTime dateTime)
     {
 
         if (dateTime.Month is >= 1 and <= 3)

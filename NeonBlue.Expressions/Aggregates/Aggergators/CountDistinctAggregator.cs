@@ -8,7 +8,7 @@
         /// <summary>
         /// Stores unique values encountered.
         /// </summary>
-        private readonly HashSet<object?> HashSet = new();
+        private readonly HashSet<object?> HashSet = [];
 
         /// <summary>
         /// Stores the accumulated count of distinct values.

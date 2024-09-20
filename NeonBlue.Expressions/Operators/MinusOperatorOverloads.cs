@@ -32,7 +32,7 @@ namespace NeonBlue.Expressions.Operators
 
         private void AddByteOps()
         {
-            ByteValue_MinusOperatorOverloads overloads = new();
+            ByteValueMinusOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Byte, overloads);
         }
 
@@ -44,7 +44,7 @@ namespace NeonBlue.Expressions.Operators
 
         private void AddDeicmalOps()
         {
-            DecimalValue_MinusOperatorOverloads overloads = new();
+            DecimalValueMinusOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Decimal, overloads);
         }
 
@@ -57,7 +57,7 @@ namespace NeonBlue.Expressions.Operators
         private void AddDoubleOps()
         {
 
-            DoubleValue_MinusOperatorOverloads overloads = new();
+            DoubleValueMinusOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Double, overloads);
         }
 

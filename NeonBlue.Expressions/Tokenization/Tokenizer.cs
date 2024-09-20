@@ -21,7 +21,7 @@ namespace NeonBlue.Expressions
         /// <summary>
         /// The list of tokens generated during the tokenization process.
         /// </summary>
-        private readonly List<IntermediateToken> _tokens = new();
+        private readonly List<IntermediateToken> _tokens = [];
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Tokenizer"/> class.

@@ -30,7 +30,7 @@ namespace NeonBlue.Expressions.Aggregates
         /// <summary>
         /// Stores aggregators keyed by their variable names.
         /// </summary>
-        private Dictionary<string, IAggregator?> Aggregators { get; set; } = new();
+        private Dictionary<string, IAggregator?> Aggregators { get; set; } = [];
 
         /// <summary>
         /// Gets an aggregator for the specified variable.

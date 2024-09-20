@@ -8,7 +8,7 @@
         /// <summary>
         /// Gets a list of parts that make up the aggregated expression.
         /// </summary>
-        public List<AggregatedExpressionPart> Parts { get; } = new();
+        public List<AggregatedExpressionPart> Parts { get; } = [];
 
         /// <summary>
         /// Gets the final expression string.

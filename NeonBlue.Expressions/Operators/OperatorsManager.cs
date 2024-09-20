@@ -2,14 +2,12 @@
 
 namespace NeonBlue.Expressions
 {
-    public class OperatorsManager
+    public static class OperatorsManager
     {
         static Dictionary<TokenType, IOperator>? operators = null;
         public static Dictionary<TokenType, IOperator> GetOperators()
         {
-            if (operators == null)
-            {
-                operators = new(){
+            operators ??= new(){
                     {TokenType.Plus, new PlusOperatorOverloads()},
 
                     {TokenType.Minuse, new MinusOperatorOverloads()},
@@ -39,7 +37,6 @@ namespace NeonBlue.Expressions
                     {TokenType.LogicalNot, new LogicalNotOperatorOverloads()},
 
                 };
-            }
             return operators;
         }
 

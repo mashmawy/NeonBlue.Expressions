@@ -8,12 +8,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualByteReturnCorrectValueAndValueType()
         {
             // Given 
-            LessThanOrEqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(1f, TokenType.Float);
             var operand2 = new Token((byte)2, TokenType.Byte);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
 
             // Then 
             Assert.NotNull(result.Value);
@@ -25,12 +25,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualIntegerReturnCorrectValueAndValueType()
         {
             // Given 
-            LessThanOrEqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(1f, TokenType.Float);
             var operand2 = new Token(2, TokenType.Integer);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -41,12 +41,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualLongReturnCorrectValueAndValueType()
         {
             // Given 
-            LessThanOrEqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(1f, TokenType.Float);
             var operand2 = new Token((long)2, TokenType.Long);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -57,12 +57,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualFloatReturnCorrectValueAndValueType()
         {
             // Given 
-            LessThanOrEqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(1f, TokenType.Float);
             var operand2 = new Token(2f, TokenType.Float);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -73,12 +73,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualDoubleReturnCorrectValueAndValueType()
         {
             // Given 
-            LessThanOrEqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(1f, TokenType.Float);
             var operand2 = new Token(2.0, TokenType.Double);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -89,12 +89,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualDecimalReturnCorrectValueAndValueType()
         {
             // Given 
-            LessThanOrEqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(1f, TokenType.Float);
             var operand2 = new Token(2m, TokenType.Decimal);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -109,11 +109,11 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         [Fact]
         public void FloatLessThanOrEqualNullFunctionDefaultOption()
         {
-            LessThanOrEqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(1f, TokenType.Float);
             var operand2 = new Token(null, TokenType.NULL);
             var result =
-             equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Default));
+             lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Default));
 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -123,11 +123,11 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         [Fact]
         public void FloatLessThanOrEqualNullFunctionPropgateOption()
         {
-            LessThanOrEqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(1f, TokenType.Float);
             var operand2 = new Token(null, TokenType.NULL);
             var result =
-             equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Propagate));
+             lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Propagate));
 
             Assert.Null(result.Value);
             Assert.True(result.TokenType == TokenType.NULL);
@@ -136,12 +136,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         [Fact]
         public void FloatLessThanOrEqualNullFunctionThrowOption()
         {
-            LessThanOrEqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(1f, TokenType.Float);
             var operand2 = new Token(null, TokenType.NULL);
             Assert.Throws<NullTokenException>(() =>
             {
-                equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             });
         }
 
@@ -151,12 +151,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualWhenEqualByteReturnCorrectValueAndValueType()
         {
             // Given 
-            EqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(2f, TokenType.Float);
             var operand2 = new Token((byte)2, TokenType.Byte);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
 
             // Then 
             Assert.NotNull(result.Value);
@@ -168,12 +168,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualWhenEqualIntegerReturnCorrectValueAndValueType()
         {
             // Given 
-            EqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(2f, TokenType.Float);
             var operand2 = new Token(2, TokenType.Integer);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -184,12 +184,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualWhenEqualLongReturnCorrectValueAndValueType()
         {
             // Given 
-            EqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(2f, TokenType.Float);
             var operand2 = new Token((long)2, TokenType.Long);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -200,12 +200,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualWhenEqualFloatReturnCorrectValueAndValueType()
         {
             // Given 
-            EqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(2f, TokenType.Float);
             var operand2 = new Token(2f, TokenType.Float);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -216,12 +216,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualWhenEqualDoubleReturnCorrectValueAndValueType()
         {
             // Given 
-            EqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(2f, TokenType.Float);
             var operand2 = new Token(2.0, TokenType.Double);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
@@ -232,12 +232,12 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
         public void FloatLessThanOrEqualWhenEqualDecimalReturnCorrectValueAndValueType()
         {
             // Given 
-            EqualOperatorOverloads equalOperatorOverloads = new();
+            LessThanOrEqualOperatorOverloads lessThanOrEqualOperatorOverloads = new();
             var operand1 = new Token(2f, TokenType.Float);
             var operand2 = new Token(2m, TokenType.Decimal);
             // When
             var result =
-                     equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
+                     lessThanOrEqualOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);

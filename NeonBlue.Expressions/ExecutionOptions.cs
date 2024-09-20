@@ -4,10 +4,9 @@ namespace NeonBlue.Expressions
     {
         public NullStrategy NullStrategy { get; }
     }
-    public class ExecutionOptions : IExecutionOptions
+    public class ExecutionOptions(NullStrategy nullStrategy) : IExecutionOptions
     {
-        public NullStrategy NullStrategy { get; private set; }
-        public ExecutionOptions(NullStrategy nullStrategy) => NullStrategy = nullStrategy;
+        public NullStrategy NullStrategy { get; private set; } = nullStrategy;
     }
     public enum NullStrategy
     {

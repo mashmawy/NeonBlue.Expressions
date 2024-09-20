@@ -48,19 +48,19 @@ namespace NeonBlue.Expressions.Operators
 
         private void AddDeicmalOps()
         {
-            DecimalValue_DivideOperatorOverloads overloads = new();
+            DecimalValueDivideOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Decimal, overloads);
         }
 
         private void AddFloatOps()
         {
-            FloatValue_DivideOperatorOverloads overloads = new();
+            FloatValueDivideOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Float, overloads);
         }
 
         private void AddDoubleOps()
         {
-            DoubleValue_DivideOperatorOverloads overloads = new();
+            DoubleValueDivideOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Double, overloads);
         }
 
@@ -79,7 +79,7 @@ namespace NeonBlue.Expressions.Operators
                     return MathFunctionUtils.NullCheck(operand2, executionOptions.NullStrategy);
 
                 }
-                if (Convert.ToDouble(operand2.Value) == 0)
+                if (Convert.ToDouble(operand2.Value).Equals(0.0))
                 {
                     throw new DivideByZeroException();
                 }
