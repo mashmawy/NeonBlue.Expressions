@@ -10,12 +10,12 @@ namespace NeonBlue.Expressions.Aggregates.Aggergators
             base.Update(val);
             if (val is null) return;
 
-            if (val.GetType() != typeof(double) &&
-             val.GetType() != typeof(int) &&
-             val.GetType() != typeof(byte) &&
-             val.GetType() != typeof(long) &&
-             val.GetType() != typeof(float) &&
-             val.GetType() != typeof(decimal))
+            if (val is not double &&
+                (val is not int) &&
+                (val is not byte) &&
+                (val is not long) &&
+                (val is not float) &&
+                (val is not decimal))
             {
                 throw new InvalidArgumentTypeException
                        ("Mean", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Mean");

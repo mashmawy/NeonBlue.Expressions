@@ -16,7 +16,7 @@ public class MinAggergatorUnitTest
         }
         var res = minAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double avg = Convert.ToDouble(res);
         Assert.Equal(1, avg);
     }
@@ -31,7 +31,7 @@ public class MinAggergatorUnitTest
         }
         var res = minAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double avg = Convert.ToDouble(res);
         Assert.Equal(1, avg);
     }
@@ -47,7 +47,7 @@ public class MinAggergatorUnitTest
         }
         var res = minAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(DateTime));
+        Assert.True(res is DateTime);
         DateTime avg = Convert.ToDateTime(res);
         Assert.Equal(new DateTime(2024, 9, 1), avg);
     }

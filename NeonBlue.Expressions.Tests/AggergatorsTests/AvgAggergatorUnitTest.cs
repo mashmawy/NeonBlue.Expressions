@@ -16,7 +16,7 @@ public class AvgAggergatorUnitTest
         }
         var res = avgAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double avg = Convert.ToDouble(res);
         Assert.Equal(3.5, avg);
     }
@@ -31,7 +31,7 @@ public class AvgAggergatorUnitTest
         }
         var res = avgAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double avg = Convert.ToDouble(res);
         Assert.Equal(3, avg);
     }

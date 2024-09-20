@@ -2,7 +2,7 @@
 {
     public class MinAggregator : AggregatorBase
     {
-        object? accumelated ; 
+        object? accumelated;
         public override void Update(object? val)
         {
             base.Update(val);
@@ -11,59 +11,44 @@
                 accumelated = val;
                 return;
             }
-            
+
             if (val is null)
             {
                 return;
+            } 
+            if (val is int intVal)
+            { 
+                accumelated = Math.Min((int)accumelated, intVal);
             }
-        
-            if (val.GetType() == typeof(int))
-            {
-
-                accumelated = Math.Min((int)accumelated, (int)val);
+            else if (val is float floatVal)
+            { 
+                accumelated = Math.Min((float)accumelated, floatVal);
             }
-            else
-            if (val.GetType() == typeof(float))
-            {
-
-                accumelated = Math.Min((float)accumelated, (float)val);
+            else if (val is decimal decimalVal)
+            { 
+                accumelated = Math.Min(Convert.ToDecimal(accumelated), decimalVal);
             }
-            else
-            if (val.GetType() == typeof(decimal))
-            {
-
-                accumelated = Math.Min(Convert.ToDecimal(accumelated), (decimal)val);
+            else if (val is double doubleVal)
+            { 
+                accumelated = Math.Min((double)accumelated, doubleVal);
             }
-            else
-            if (val.GetType() == typeof(double))
-            {
-
-                accumelated = Math.Min((double)accumelated, (double)val);
+            else if (val is long longVal)
+            { 
+                accumelated = Math.Min((long)accumelated, longVal);
             }
-            else
-            if (val.GetType() == typeof(long))
-            {
-
-                accumelated = Math.Min((long)accumelated, (long)val);
+            else if (val is byte byteVal)
+            { 
+                accumelated = Math.Min((int)accumelated, byteVal);
             }
-            else
-            if (val.GetType() == typeof(byte))
-            {
-
-                accumelated = Math.Min((int)accumelated, (byte)val);
-            }
-            else
-            if (val.GetType() == typeof(string))
+            else if (val is string)
             {
                 accumelated = val;
             }
-            else
-            if (val.GetType() == typeof(bool))
+            else if (val is bool)
             {
                 accumelated = val;
             }
-            else
-            if (val.GetType() == typeof(DateTime))
+            else if (val is DateTime)
             {
                 accumelated = Convert.ToDateTime(accumelated) > Convert.ToDateTime(val) ? val : accumelated;
             }

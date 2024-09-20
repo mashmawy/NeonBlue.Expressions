@@ -15,7 +15,7 @@ public class StdAggregatorUnitTest
         }
         var res = stdAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double variance = Convert.ToDouble(res);
         Assert.Equal(Math.Round(Math.Sqrt(2.9167), 4), Math.Round(variance, 4));
     }
@@ -31,7 +31,7 @@ public class StdAggregatorUnitTest
         }
         var res = stdAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double variance = Convert.ToDouble(res);
         Assert.Equal(Math.Round(Math.Sqrt(2.1875), 4), Math.Round(variance, 4));
     }

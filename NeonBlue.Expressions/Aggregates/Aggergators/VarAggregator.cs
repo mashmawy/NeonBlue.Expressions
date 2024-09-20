@@ -12,12 +12,12 @@
             base.Update(val);
             if (val is null) return;
 
-            if (val.GetType() != typeof(double) &&
-             val.GetType() != typeof(int) &&
-             val.GetType() != typeof(byte) &&
-             val.GetType() != typeof(long) &&
-             val.GetType() != typeof(float) &&
-             val.GetType() != typeof(decimal))
+            if (!(val is double) &&
+!(val is int) &&
+!(val is byte) &&
+!(val is long) &&
+!(val is float) &&
+!(val is decimal))
             {
                 throw new InvalidArgumentTypeException
                        ("Var", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Var");

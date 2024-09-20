@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Text;
 using NeonBlue.Expressions.Aggregates;
 using NeonBlue.Expressions.Operators;
 
@@ -17,10 +18,10 @@ namespace NeonBlue.Expressions
             int opened = 0;
             Dictionary<string, string> results = [];
             List<AggregatedExpressionPart> expressions = [];
-            string current = string.Empty;
+            StringBuilder inFunctionExpression = new();
             List<string> variables = [];
             string currentFunction = string.Empty;
-            string newFormula = "";
+            StringBuilder updatedExpression = new();
             foreach (var token in tokens)
             {
 
@@ -43,31 +44,25 @@ namespace NeonBlue.Expressions
                     opened--;
                     if (opened == 0)
                     {
-                        if (inFuntion)
-                        {
-                            var id = "V" + Guid.NewGuid().ToString().Replace("-", "");
-                            results.Add(id, current);
-                            expressions.Add(new AggregatedExpressionPart(current, id, currentFunction, variables));
-                            expression = expression.Replace(current, id);
-                            current = "";
-                            newFormula += id;
-                            variables.Clear();
-                        }
-                        else
-                        {
-                            newFormula += token.Value;
-                        }
+                        var id = "V" + Guid.NewGuid().ToString().Replace("-", "");
+                        var currentString = inFunctionExpression.ToString();
+                        results.Add(id, currentString);
+                        expressions.Add(new AggregatedExpressionPart(currentString, id, currentFunction, variables));
+                        expression = expression.Replace(currentString, id);
+                        inFunctionExpression.Clear();
+                        updatedExpression.Append(id);
+                        variables.Clear();
                         inFuntion = false;
                         continue;
                     }
                 }
                 if (inFuntion)
                 {
-                    current += token.Value;
+                    inFunctionExpression.Append(token.Value);
                 }
                 else
                 {
-                    newFormula += token.Value;
+                    updatedExpression.Append(token.Value);
                 }
                 if (token.Value is not null && token.TokenType == IntermediateTokenType.Variable)
                     variables.Add(token.Value.Trim());
@@ -77,7 +72,7 @@ namespace NeonBlue.Expressions
             {
                 throw new UnclosedParenthesesException();
             }
-            return new AggregatedExpression(newFormula, expressions);
+            return new AggregatedExpression(updatedExpression.ToString(), expressions);
         }
         internal static List<Token> Parse(string expression, IExpressionContext table, FunctionsLookup functionsLookup)
         {

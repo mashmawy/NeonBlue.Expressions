@@ -14,7 +14,7 @@ public class BytePlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Integer);
-        Assert.True(result.Value.GetType() == typeof(int));
+        Assert.True(result.Value is int);
         Assert.Equal(22, Convert.ToInt32(result.Value));
     }
 
@@ -29,7 +29,7 @@ public class BytePlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Integer);
-        Assert.True(result.Value.GetType() == typeof(int));
+        Assert.True(result.Value is int);
         Assert.Equal(220, Convert.ToInt32(result.Value));
     }
     [Fact]
@@ -43,7 +43,7 @@ public class BytePlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Long);
-        Assert.True(result.Value.GetType() == typeof(long));
+        Assert.True(result.Value is long);
         Assert.Equal(220, Convert.ToInt64(result.Value));
     }
     [Fact]
@@ -57,7 +57,7 @@ public class BytePlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Float);
-        Assert.True(result.Value.GetType() == typeof(float));
+        Assert.True(result.Value is float);
         Assert.Equal(220, Convert.ToSingle(result.Value));
     }
     [Fact]
@@ -71,7 +71,7 @@ public class BytePlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Decimal);
-        Assert.True(result.Value.GetType() == typeof(decimal));
+        Assert.True(result.Value is decimal);
         Assert.Equal(220m, Convert.ToDecimal(result.Value));
     }
     [Fact]
@@ -85,7 +85,7 @@ public class BytePlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Double);
-        Assert.True(result.Value.GetType() == typeof(double));
+        Assert.True(result.Value is double);
         Assert.Equal(220.0, Convert.ToDouble(result.Value));
     }
     [Fact]
@@ -135,7 +135,7 @@ public class BytePlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.String);
-        Assert.True(result.Value.GetType() == typeof(string));
+        Assert.True(result.Value is string);
         Assert.Equal("200545" , Convert.ToString(result.Value));
     }
 

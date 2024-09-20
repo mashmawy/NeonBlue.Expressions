@@ -14,7 +14,7 @@ public class DoublePercentageOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Double);
-        Assert.True(result.Value.GetType() == typeof(double));
+        Assert.True(result.Value is double);
         Assert.Equal(1.0, Convert.ToDouble(result.Value));
     }
 
@@ -29,7 +29,7 @@ public class DoublePercentageOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Double);
-        Assert.True(result.Value.GetType() == typeof(double));
+        Assert.True(result.Value is double);
         Assert.Equal(1.0, Convert.ToDouble(result.Value));
     }
     [Fact]
@@ -43,7 +43,7 @@ public class DoublePercentageOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Double);
-        Assert.True(result.Value.GetType() == typeof(double));
+        Assert.True(result.Value is double);
         Assert.Equal(1.0, Convert.ToDouble(result.Value));
     }
     [Fact]
@@ -57,7 +57,7 @@ public class DoublePercentageOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Double);
-        Assert.True(result.Value.GetType() == typeof(double));
+        Assert.True(result.Value is double);
         Assert.Equal(1.0, Convert.ToDouble(result.Value));
     }
     [Fact]
@@ -71,7 +71,7 @@ public class DoublePercentageOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Decimal);
-        Assert.True(result.Value.GetType() == typeof(decimal));
+        Assert.True(result.Value is decimal);
         Assert.Equal(1m, Convert.ToDecimal(result.Value));
     }
     [Fact]
@@ -85,7 +85,7 @@ public class DoublePercentageOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.Double);
-        Assert.True(result.Value.GetType() == typeof(double));
+        Assert.True(result.Value is double);
         Assert.Equal(1.0, Convert.ToDouble(result.Value));
     }
 

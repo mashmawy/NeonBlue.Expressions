@@ -18,7 +18,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
-            Assert.True(result.Value.GetType() == typeof(bool));
+            Assert.True(result.Value is bool);
             Assert.True(Convert.ToBoolean(result.Value));
         }
          
@@ -37,7 +37,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
-            Assert.True(result.Value.GetType() == typeof(bool));
+            Assert.True(result.Value is bool);
             Assert.True(Convert.ToBoolean(result.Value));
         }
         [Fact]
@@ -50,7 +50,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LessThanOrEqualOperatorsTest
              equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Default));
 
             Assert.NotNull(result.Value);
-            Assert.True(result.Value.GetType() == typeof(bool));
+            Assert.True(result.Value is bool);
             Assert.False(Convert.ToBoolean(result.Value));
         }
 

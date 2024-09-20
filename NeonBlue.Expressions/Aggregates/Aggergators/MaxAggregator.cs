@@ -11,69 +11,43 @@
             if (accumelated is null)
             {
                 accumelated = val;
-                return;
             }
-
-            if (val is null)
-            {
-                return;
+            else if (val is int intVal)
+            { 
+                accumelated = Math.Max((int)accumelated, intVal);
             }
-
-            if (val.GetType() == typeof(int))
-            {
-
-                accumelated = Math.Max((int)accumelated, (int)val);
+            else if (val is float floatVal)
+            { 
+                accumelated = Math.Max((float)accumelated, floatVal);
             }
-            else
-            if (val.GetType() == typeof(float))
+            else if (val is decimal decimalVal)
             {
 
-                accumelated = Math.Max((float)accumelated, (float)val);
+                accumelated = Math.Max(Convert.ToDecimal(accumelated), decimalVal);
             }
-            else
-            if (val.GetType() == typeof(decimal))
+            else if (val is double doubleVal)
             {
 
-                accumelated = Math.Max(Convert.ToDecimal(accumelated), (decimal)val);
+                accumelated = Math.Max((double)accumelated, doubleVal);
             }
-            else
-            if (val.GetType() == typeof(double))
+            else if (val is long longVal)
+            { 
+                accumelated = Math.Max((long)accumelated, longVal);
+            }
+            else if (val is byte byteVal)
             {
 
-                accumelated = Math.Max((double)accumelated, (double)val);
+                accumelated = Math.Max((int)accumelated, byteVal);
             }
-            else
-            if (val.GetType() == typeof(long))
+            else if (val is string)
             {
-
-                accumelated = Math.Max((long)accumelated, (long)val);
+                accumelated = val;
             }
-            else
-            if (val.GetType() == typeof(byte))
+            else if (val is bool)
             {
-
-                accumelated = Math.Max((int)accumelated, (byte)val);
+                accumelated = val; 
             }
-            else
-            if (val.GetType() == typeof(string))
-            {
-                if (accumelated is null)
-                {
-                    accumelated = val;
-                    return;
-                }
-            }
-            else
-            if (val.GetType() == typeof(bool))
-            {
-                if (accumelated is null)
-                {
-                    accumelated = val;
-                    return;
-                }
-            }
-            else
-            if (val.GetType() == typeof(DateTime))
+            else if (val is DateTime)
             {
                 accumelated = Convert.ToDateTime(accumelated) < Convert.ToDateTime(val) ? val : accumelated;
             }

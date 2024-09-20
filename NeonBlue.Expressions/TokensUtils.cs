@@ -43,7 +43,7 @@
                 return new(TokenType.NULL, null);
             }
             else
-            if (data.GetType() == typeof(string))
+            if (data is string)
             {
                 string datastr = data.ToString()!;
                 if (datastr.Trim().StartsWith('\'') && datastr.Trim().EndsWith('\''))

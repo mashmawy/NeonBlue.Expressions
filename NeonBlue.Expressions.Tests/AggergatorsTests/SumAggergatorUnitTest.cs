@@ -16,7 +16,7 @@ public class SumAggergatorUnitTest
         }
         var res = sumAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double sum = Convert.ToDouble(res);
         Assert.Equal(21, sum);
     }
@@ -31,7 +31,7 @@ public class SumAggergatorUnitTest
         }
         var res = sumAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double sum = Convert.ToDouble(res);
         Assert.Equal(18, sum);
     }

@@ -16,7 +16,7 @@ public class MeanAggregatorUnitTest
         }
         var res = meanAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double meaniance = Convert.ToDouble(res);
         Assert.Equal(3.5, Math.Round(meaniance, 2));
     }
@@ -32,7 +32,7 @@ public class MeanAggregatorUnitTest
         }
         var res = meanAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double meaniance = Convert.ToDouble(res);
         Assert.Equal(4.25, Math.Round(meaniance, 2));
     }

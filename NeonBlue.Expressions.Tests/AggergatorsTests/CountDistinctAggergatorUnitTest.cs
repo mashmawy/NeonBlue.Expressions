@@ -16,7 +16,7 @@ namespace NeonBlue.Expressions.Tests.AggergatorsTests
             }
             var res = cntAggregator.Return();
             Assert.NotNull(res);
-            Assert.True(res.GetType() == typeof(int));
+            Assert.True(res is int);
             int avg = Convert.ToInt32(res);
             Assert.Equal(4, avg);
         }
@@ -31,7 +31,7 @@ namespace NeonBlue.Expressions.Tests.AggergatorsTests
             }
             var res = cntAggregator.Return();
             Assert.NotNull(res);
-            Assert.True(res.GetType() == typeof(int));
+            Assert.True(res is int);
             int avg = Convert.ToInt32(res);
             Assert.Equal(5, avg);
         }

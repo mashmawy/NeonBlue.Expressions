@@ -15,7 +15,7 @@ public class VarAggregatorUnitTest
         }
         var res = varAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double variance = Convert.ToDouble(res);
         Assert.Equal(2.9167, Math.Round(variance, 4));
     }
@@ -31,7 +31,7 @@ public class VarAggregatorUnitTest
         }
         var res = varAggregator.Return();
         Assert.NotNull(res);
-        Assert.True(res.GetType() == typeof(double));
+        Assert.True(res is double);
         double variance = Convert.ToDouble(res);
         Assert.Equal(2.1875, Math.Round(variance, 4));
     }

@@ -15,7 +15,7 @@ public class StringPlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.String);
-        Assert.True(result.Value.GetType() == typeof(string));
+        Assert.True(result.Value is string);
         Assert.Equal("123b20", Convert.ToString(result.Value));
     }
 
@@ -30,7 +30,7 @@ public class StringPlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.String);
-        Assert.True(result.Value.GetType() == typeof(string));
+        Assert.True(result.Value is string);
         Assert.Equal("123b20", Convert.ToString(result.Value));
     } 
     [Fact]
@@ -44,7 +44,7 @@ public class StringPlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.String);
-        Assert.True(result.Value.GetType() == typeof(string));
+        Assert.True(result.Value is string);
         Assert.Equal("123b20", Convert.ToString(result.Value));
     }
     [Fact]
@@ -58,7 +58,7 @@ public class StringPlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.String);
-        Assert.True(result.Value.GetType() == typeof(string));
+        Assert.True(result.Value is string);
        Assert.Equal("123b20", Convert.ToString(result.Value));
     }
     [Fact]
@@ -72,7 +72,7 @@ public class StringPlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.String);
-        Assert.True(result.Value.GetType() == typeof(string));
+        Assert.True(result.Value is string);
       Assert.Equal("123b20", Convert.ToString(result.Value));
     } 
     [Fact]
@@ -127,7 +127,7 @@ public class StringPlusOperatorUnitTest
 
         Assert.NotNull(result.Value);
         Assert.True(result.TokenType == TokenType.String);
-        Assert.True(result.Value.GetType() == typeof(string));
+        Assert.True(result.Value is string);
         Assert.Equal("123b545", Convert.ToString(result.Value));
     }
 

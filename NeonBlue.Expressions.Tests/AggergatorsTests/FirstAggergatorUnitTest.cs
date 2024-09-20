@@ -16,7 +16,7 @@ namespace NeonBlue.Expressions.Tests.AggergatorsTests
             }
             var res = firstAggregator.Return();
             Assert.NotNull(res);
-            Assert.True(res.GetType() == typeof(double));
+            Assert.True(res is double);
             double avg = Convert.ToDouble(res);
             Assert.Equal(1, avg);
         }
@@ -31,7 +31,7 @@ namespace NeonBlue.Expressions.Tests.AggergatorsTests
             }
             var res = firstAggregator.Return();
             Assert.NotNull(res);
-            Assert.True(res.GetType() == typeof(double));
+            Assert.True(res is double);
             double avg = Convert.ToDouble(res);
             Assert.Equal(2, avg);
         }

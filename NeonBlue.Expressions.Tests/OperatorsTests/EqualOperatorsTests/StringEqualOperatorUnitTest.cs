@@ -19,7 +19,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.EqualOperatorsTests
             // Then 
             Assert.NotNull(result.Value);
             Assert.True(result.TokenType == TokenType.Boolean);
-            Assert.True(result.Value.GetType() == typeof(bool));
+            Assert.True(result.Value is bool);
             Assert.True(Convert.ToBoolean(result.Value));
         }
 

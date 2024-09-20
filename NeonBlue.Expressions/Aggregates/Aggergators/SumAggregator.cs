@@ -19,37 +19,36 @@
                 return;
             }
             else
-            if (val.GetType() == typeof(int))
+            if (val is int)
             {
 
                 accumelated = (int)accumelated + (int)val;
             }
             else
-            if (val.GetType() == typeof(float))
+            if (val is float)
             {
 
                 accumelated = (float)accumelated + (float)val;
             }
             else
-            if (val.GetType() == typeof(decimal))
+            if (val is decimal)
             {
 
                 accumelated = Convert.ToDecimal(accumelated) + (decimal)val;
             }
             else
-            if (val.GetType() == typeof(double))
+            if (val is double)
             {
 
                 accumelated = (double)accumelated + (double)val;
             }
             else
-            if (val.GetType() == typeof(long))
+            if (val is long)
             {
 
                 accumelated = (long)accumelated + (long)val;
             }
-            else
-            if (val.GetType() == typeof(byte))
+            else if (val is byte)
             {
 
                 accumelated = (int)accumelated + (byte)val;

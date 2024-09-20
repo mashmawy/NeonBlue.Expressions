@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace NeonBlue.Expressions
 {
     public class ExpressionParameters
@@ -68,18 +70,19 @@ namespace NeonBlue.Expressions
         {
             Dictionary<string, object?> updated = [];
             _cursor++;
-            foreach (var parameter in Parameters)
+            foreach (var para in from parameter in Parameters
+                                 let para = parameter.Value
+                                 where para is not null && parameter.Value.IsArray
+                                 select para)
             {
-                var para = parameter.Value;
-                if (para is not null && parameter.Value.IsArray)
+                if (para.Value is null || para.ArrayLength <= _cursor)
                 {
-                    if (para.Value is not null && para.ArrayLength > _cursor)
-                    {
-                        var array = (Array)para.Value;
-                        updated.Add(para.Name, array?.GetValue(_cursor));
-                    }
+                    continue;
                 }
-            }
+
+                var array = (Array)para.Value;
+                updated.Add(para.Name, array?.GetValue(_cursor));
+            } 
             return updated;
         }
         public void Reset()

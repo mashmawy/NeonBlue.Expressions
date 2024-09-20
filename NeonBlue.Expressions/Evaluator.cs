@@ -18,8 +18,8 @@
         {
             try
             {
-                ArgumentNullException.ThrowIfNull(context, nameof(context));
-                ArgumentNullException.ThrowIfNull(executionOptions, nameof(executionOptions));
+                ArgumentNullException.ThrowIfNull(context);
+                ArgumentNullException.ThrowIfNull(executionOptions);
                 _executionOptions = executionOptions;
                 _context = context;
             }
@@ -37,7 +37,7 @@
         {
             try
             {
-                ArgumentNullException.ThrowIfNull(executionOptions, nameof(executionOptions));
+                ArgumentNullException.ThrowIfNull(executionOptions);
                 _executionOptions = executionOptions;
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@
         /// </summary>
         /// <param name="name">A string representing the name of the variable to set.</param>
         /// <param name="value">An object representing the new value to assign to the variable.</param>
-        private void SetVariable(string name, object? value)
+        public void SetVariable(string name, object? value)
         {
             _context.SetVariable(name, value);
         }
@@ -62,7 +62,7 @@
         /// <param name="expression">A string representing the expression to be evaluated.</param>
         /// <returns>An object? representing the result of the evaluation. The return type can be any data type supported by the expression language.</returns>
         /// <exception cref="NeonBlueExpressionException">Thrown if an error occurs during the evaluation process. The inner exception provides more details about the specific error.</exception>
-        private object? Evaluate(string expression)
+        public object? Evaluate(string expression)
         {
             if (compiledCache.TryGetValue(expression, out List<Token>? value))
             {
@@ -70,7 +70,7 @@
             }
             else
             {
-                var exp = ExpressionAnalyzer.Parse(expression, _context, _functionsLookup);
+                List<Token> exp = ExpressionAnalyzer.Parse(expression, _context, _functionsLookup);
                 compiledCache.Add(expression, exp);
                 return Evaluate(exp);
             }
@@ -88,33 +88,34 @@
             try
             {
                 neonBlueExpression.Init(_functionsLookup);
-                foreach (var item in dataSource.GetParameters().Where(p => !p.IsArray))
+                var noneArrayParamters = dataSource.GetParameters().Where(p => !p.IsArray);
+                foreach (var item in noneArrayParamters.Select(p=>p.Name))
                 {
-                    _context.SetVariable(item.Name, dataSource.GetValue(item.Name));
+                    _context.SetVariable(item, dataSource.GetValue(item));
                 }
                 if (neonBlueExpression.IsAggregate)
                 {
                     for (int i = 0; i < dataSource.MaxLength; i++)
                     {
-                        var updated = dataSource.MoveNext();
-                        var varNames = updated.Keys;
-                        var parts = neonBlueExpression
+                        Dictionary<string, object?> updated = dataSource.MoveNext();
+                        Dictionary<string, object?>.KeyCollection varNames = updated.Keys;
+                        IEnumerable<Aggregates.AggregatedExpressionPart> parts = neonBlueExpression
                         .aggregateException!.Parts.Where(p => varNames.Intersect(p.Variables).Any());
 
-                        foreach (var v in updated)
+                        foreach (KeyValuePair<string, object?> v in updated)
                         {
                             _context.SetVariable(v.Key, v.Value);
                         }
-                        foreach (var var in parts)
+                        foreach (Aggregates.AggregatedExpressionPart? var in parts)
                         {
-                            var evalagg = Evaluate(var.Expression);
+                            object? evalagg = Evaluate(var.Expression);
                             var.GetAggregator("x")?.Update(evalagg);
                         }
 
                     }
                 }
                 dataSource.Reset();
-                return AggregateAndEvaluate(neonBlueExpression); ;
+                return AggregateAndEvaluate(neonBlueExpression); 
             }
             catch (Exception ex)
             {
@@ -132,6 +133,20 @@
         public T? Evaluate<T>(Expression neonBlueExpression, ExpressionParameters dataSource)
         {
             return ConvertTo<T>(Evaluate(neonBlueExpression, dataSource));
+        }
+
+        private object? Evaluate(List<Token> expressionList)
+        {
+            foreach (Token word in expressionList)
+            {
+                if (word.ToString() == ",")
+                {
+                    continue;
+                }
+                Scan(word, evaluationStack, _context, _executionOptions);
+            }
+            evaluationStack.TryPop(out Token? res2);
+            return res2?.Value;
         }
 
         private static T? ConvertTo<T>(object? value)
@@ -157,27 +172,14 @@
 
         private object? AggregateAndEvaluate(Expression neonBlueExpression)
         {
-            foreach (var e in neonBlueExpression.aggregateException!.Parts)
+            foreach (Aggregates.AggregatedExpressionPart e in neonBlueExpression.aggregateException!.Parts)
             {
-                var Aggergator = e.GetAggregator("x");
+                Aggregates.IAggregator? Aggergator = e.GetAggregator("x");
                 if (Aggergator != null)
                     _context.SetVariable(e.Id, Aggergator.Return());
             }
             return Evaluate(neonBlueExpression.finalFormula);
 
-        }
-        private object? Evaluate(List<Token> expressionList)
-        {
-            foreach (var word in expressionList)
-            {
-                if (word.ToString() == ",")
-                {
-                    continue;
-                }
-                Scan(word, evaluationStack, _context, _executionOptions);
-            }
-            evaluationStack.TryPop(out Token? res2);
-            return res2?.Value;
         }
         private void Scan(Token item, Stack<Token> evaluationStack, IExpressionContext table, IExecutionOptions executionOptions)
         {

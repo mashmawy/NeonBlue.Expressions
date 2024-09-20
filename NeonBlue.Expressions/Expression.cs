@@ -18,7 +18,7 @@ namespace NeonBlue.Expressions
         {
             try
             {
-                ArgumentNullException.ThrowIfNull(Formula, nameof(Formula));
+                ArgumentNullException.ThrowIfNull(Formula);
                 aggregateException = ExpressionAnalyzer.GetAggregatedExpressions(Formula, functionsLookup);
 
                 this.finalFormula = aggregateException.FinalExpression;
