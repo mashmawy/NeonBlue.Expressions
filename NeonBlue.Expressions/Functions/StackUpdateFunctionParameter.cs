@@ -1,6 +1,4 @@
-﻿using NeonBlue.Expressions;
-
-namespace NeonBlue.Expressions.Functions
+﻿namespace NeonBlue.Expressions.Functions
 {
     public class StackUpdateFunctionParameter
     {

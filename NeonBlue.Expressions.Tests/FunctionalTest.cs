@@ -1,5 +1,3 @@
-using NeonBlue.Expressions.Functions;
-
 namespace NeonBlue.Expressions.Tests;
 
 public class FunctionalTest

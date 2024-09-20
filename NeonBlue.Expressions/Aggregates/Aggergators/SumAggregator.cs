@@ -1,6 +1,4 @@
-﻿using NeonBlue.Expressions;
-
-namespace NeonBlue.Expressions.Aggregates.Aggergators
+﻿namespace NeonBlue.Expressions.Aggregates.Aggergators
 {
     public class SumAggregator : AggregatorBase
     {

@@ -1,8 +1,4 @@
-﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions.Functions;
-
-namespace NeonBlue.Expressions.Functions.DateFunctions
+﻿namespace NeonBlue.Expressions.Functions.DateFunctions
 {
     public class MinutesDiffFunction : StackUpdateFunction
     {

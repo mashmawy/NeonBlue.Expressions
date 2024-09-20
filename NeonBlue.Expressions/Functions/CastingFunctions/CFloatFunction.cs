@@ -1,8 +1,4 @@
-﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions.Functions;
-
-namespace NeonBlue.Expressions.Functions.CastingFunctions
+﻿namespace NeonBlue.Expressions.Functions.CastingFunctions
 {
     public class CFloatFunction : StackUpdateFunction
     {

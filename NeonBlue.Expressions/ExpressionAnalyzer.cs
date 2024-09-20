@@ -1,8 +1,5 @@
 ﻿using System.Data;
 using NeonBlue.Expressions.Aggregates;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions.Functions;
 using NeonBlue.Expressions.Operators;
 
 namespace NeonBlue.Expressions

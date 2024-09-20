@@ -1,8 +1,4 @@
-﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions.Functions;
-
-namespace NeonBlue.Expressions.Functions.StringFunctions
+﻿namespace NeonBlue.Expressions.Functions.StringFunctions
 {
     public class RTrimFunction : StackUpdateFunction
     {

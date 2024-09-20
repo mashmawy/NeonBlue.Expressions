@@ -1,7 +1,5 @@
-﻿using NeonBlue.Expressions;
-
-namespace NeonBlue.Expressions.Aggregates.Aggergators
-{ 
+﻿namespace NeonBlue.Expressions.Aggregates.Aggergators
+{
     public class VarAggregator : AggregatorBase
     {
         private int count;

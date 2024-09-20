@@ -1,8 +1,4 @@
-﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions.Functions;
-
-namespace NeonBlue.Expressions.Functions.BooleanFunctions
+﻿namespace NeonBlue.Expressions.Functions.BooleanFunctions
 {
     public class AndFunction : StackUpdateFunction
     {

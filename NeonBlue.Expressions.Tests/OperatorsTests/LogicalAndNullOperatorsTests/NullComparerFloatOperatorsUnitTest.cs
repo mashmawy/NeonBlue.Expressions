@@ -1,5 +1,3 @@
-using NeonBlue.Expressions;
-using NeonBlue.Expressions;
 using NeonBlue.Expressions.Operators.NullValue;
 
 namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests

@@ -1,6 +1,4 @@
-﻿using NeonBlue.Expressions.Functions;
-
-namespace NeonBlue.Expressions
+﻿namespace NeonBlue.Expressions
 {
     internal static class TokensUtils
     {

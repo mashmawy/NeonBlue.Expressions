@@ -1,6 +1,3 @@
-
-using NeonBlue.Expressions;
-using NeonBlue.Expressions;
 using NeonBlue.Expressions.Functions.StringFunctions;
 
 namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests

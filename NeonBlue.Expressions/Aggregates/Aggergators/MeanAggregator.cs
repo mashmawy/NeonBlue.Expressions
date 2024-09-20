@@ -1,5 +1,3 @@
-using NeonBlue.Expressions;
-
 namespace NeonBlue.Expressions.Aggregates.Aggergators
 {
     public class MeanAggregator : AggregatorBase

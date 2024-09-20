@@ -1,7 +1,4 @@
-﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions.Operators;
-using NeonBlue.Expressions.Functions.MathFunctions;
+﻿using NeonBlue.Expressions.Functions.MathFunctions;
 
 namespace NeonBlue.Expressions.Operators.ByteValue
 {

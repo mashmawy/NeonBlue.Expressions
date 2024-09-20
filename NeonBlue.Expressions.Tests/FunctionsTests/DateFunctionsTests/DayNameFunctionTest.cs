@@ -1,6 +1,4 @@
 using System.Globalization;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions;
 using NeonBlue.Expressions.Functions.DateFunctions;
 
 namespace NeonBlue.Expressions.Tests.FunctionsTests.DateFunctionsTests;

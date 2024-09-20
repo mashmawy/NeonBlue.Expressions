@@ -1,6 +1,4 @@
-﻿using NeonBlue.Expressions.Aggregates;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions.Functions;
+﻿using NeonBlue.Expressions.Aggregates; 
 
 namespace NeonBlue.Expressions
 {

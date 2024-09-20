@@ -1,5 +1,4 @@
-﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions.Operators.BooleanValue;
+﻿using NeonBlue.Expressions.Operators.BooleanValue;
 using NeonBlue.Expressions.Operators.ByteValue;
 using NeonBlue.Expressions.Operators.DatetimeValue;
 using NeonBlue.Expressions.Operators.DeicmalValue;

@@ -1,6 +1,4 @@
 using System.Reflection;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions;
 using NeonBlue.Expressions.Functions.MathFunctions;
 
 namespace NeonBlue.Expressions.Functions

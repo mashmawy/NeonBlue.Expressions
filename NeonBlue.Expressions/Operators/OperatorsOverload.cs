@@ -1,5 +1,3 @@
-using NeonBlue.Expressions;
-
 namespace NeonBlue.Expressions.Operators
 {
     public abstract class OperatorsOverload

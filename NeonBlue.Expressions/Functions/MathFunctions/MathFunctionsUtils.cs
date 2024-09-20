@@ -1,6 +1,3 @@
-using NeonBlue.Expressions;
-using NeonBlue.Expressions;
-
 namespace NeonBlue.Expressions.Functions.MathFunctions
 {
     public static class MathFunctionUtils

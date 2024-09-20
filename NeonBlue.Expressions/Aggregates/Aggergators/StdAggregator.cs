@@ -1,8 +1,6 @@
-﻿using NeonBlue.Expressions;
-
-namespace NeonBlue.Expressions.Aggregates.Aggergators
+﻿namespace NeonBlue.Expressions.Aggregates.Aggergators
 {
-   
+
     public class StdAggregator : AggregatorBase
     {
         private int count;

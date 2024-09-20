@@ -1,8 +1,4 @@
-﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions.Operators;
-
-namespace NeonBlue.Expressions.Operators.BooleanValue
+﻿namespace NeonBlue.Expressions.Operators.BooleanValue
 {
     public class BooleanValue_NotEqualOperatorOverloads : OperatorsOverload
     {

@@ -21,7 +21,7 @@
 
         public Token GetValueToken(string name)
         {
-            return new Token(GetVariableValue(name), GetVariableType(name)); ;
+            return new Token(GetVariableValue(name), GetVariableType(name));
         }
         public TokenType GetVariableType(string name)
         {
@@ -56,47 +56,47 @@
 
         private static TokenType GetTokenType(Type dataType, bool arrayOnly = false)
         {
-            if (dataType == typeof(string) && arrayOnly == false)
+            if (dataType == typeof(string) && !arrayOnly)
             {
                 return TokenType.String;
             }
 
-            if (dataType == typeof(byte) && arrayOnly == false)
+            if (dataType == typeof(byte) && !arrayOnly)
             {
                 return TokenType.Byte;
             }
 
-            if (dataType == typeof(int) && arrayOnly == false)
+            if (dataType == typeof(int) && !arrayOnly)
             {
                 return TokenType.Integer;
             }
 
-            if (dataType == typeof(long) && arrayOnly == false)
+            if (dataType == typeof(long) && !arrayOnly)
             {
                 return TokenType.Long;
             }
 
-            if (dataType == typeof(decimal) && arrayOnly == false)
+            if (dataType == typeof(decimal) && !arrayOnly)
             {
                 return TokenType.Decimal;
             }
 
-            if (dataType == typeof(float) && arrayOnly == false)
+            if (dataType == typeof(float) && !arrayOnly)
             {
                 return TokenType.Float;
             }
 
-            if (dataType == typeof(double) && arrayOnly == false)
+            if (dataType == typeof(double) && !arrayOnly)
             {
                 return TokenType.Double;
             }
 
-            if (dataType == typeof(bool) && arrayOnly == false)
+            if (dataType == typeof(bool) && !arrayOnly)
             {
                 return TokenType.Boolean;
             }
 
-            if (dataType == typeof(DateTime) && arrayOnly == false)
+            if (dataType == typeof(DateTime) && !arrayOnly)
             {
                 return TokenType.Datetime;
             }

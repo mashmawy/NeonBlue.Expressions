@@ -1,8 +1,4 @@
-﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions;
-using NeonBlue.Expressions.Functions;
-
-namespace NeonBlue.Expressions.Functions.MathFunctions
+﻿namespace NeonBlue.Expressions.Functions.MathFunctions
 {
     public class Log10Function : StackUpdateFunction
     {

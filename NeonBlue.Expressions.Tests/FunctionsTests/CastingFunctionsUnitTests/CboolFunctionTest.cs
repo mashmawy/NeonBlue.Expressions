@@ -1,5 +1,3 @@
-using NeonBlue.Expressions;
-using NeonBlue.Expressions;
 using NeonBlue.Expressions.Functions.CastingFunctions;
 
 namespace NeonBlue.Expressions.Tests.FunctionsTests.CastingFunctionsUnitTests;

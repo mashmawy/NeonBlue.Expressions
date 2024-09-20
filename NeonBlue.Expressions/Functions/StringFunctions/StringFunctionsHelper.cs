@@ -1,5 +1,4 @@
 using NeonBlue.Expressions;
-using NeonBlue.Expressions;
 
 public static class StringFunctionsHelper
 {

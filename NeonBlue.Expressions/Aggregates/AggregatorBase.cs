@@ -1,5 +1,3 @@
-using NeonBlue.Expressions;
-
 namespace NeonBlue.Expressions.Aggregates
 {
     public abstract class AggregatorBase : IAggregator
