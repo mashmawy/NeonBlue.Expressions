@@ -7,7 +7,7 @@ public class ISNULLFunctionTest
     [Fact]
     public void ISNULLFunctionUnitFalseConditionTest()
     {
-        ISNULLFunction isnullFunction = new();
+        IsnullFunction isnullFunction = new();
         Stack<Token> tokens = new(); 
         tokens.Push(new Token(10, TokenType.Integer)); 
 
@@ -23,7 +23,7 @@ public class ISNULLFunctionTest
     [Fact]
     public void ISNULLFunctionUnitTrueConditionTest()
     {
-        ISNULLFunction isnullFunction = new();
+        IsnullFunction isnullFunction = new();
         Stack<Token> tokens = new(); 
         tokens.Push(new Token(null, TokenType.NULL)); 
 

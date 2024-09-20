@@ -70,7 +70,7 @@ namespace NeonBlue.Expressions.Operators
 
         private void AddBooleanOps()
         {
-            BooleanValue_NotEqualOperatorOverloads overloads = new();
+            BooleanValueNotEqualOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Boolean, overloads);
         }
 

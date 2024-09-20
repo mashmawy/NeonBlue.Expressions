@@ -35,7 +35,7 @@ namespace NeonBlue.Expressions.Operators
         private void AddByteOps()
         {
 
-            ByteValue_GreaterThanOrEqualOperatorOverloads overloads = new();
+            ByteValueGreaterThanOrEqualOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Byte, overloads);
 
         }

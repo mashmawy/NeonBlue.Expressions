@@ -1,70 +1,74 @@
 ﻿namespace NeonBlue.Expressions.Aggregates.Aggergators
 {
+    /// <summary>
+    /// Aggregates the sum of numerical values.
+    /// </summary>
     public class SumAggregator : AggregatorBase
     {
-        object? accumelated;
+        /// <summary>
+        /// Stores the accumulated sum of values.
+        /// </summary>
+        private object? accumulated;
 
-       
+        /// <summary>
+        /// Updates the accumulated sum by adding the input value.
+        /// </summary>
+        /// <param name="val">The value to be added to the sum.</param>
         public override void Update(object? val)
         {
             base.Update(val);
-            if (accumelated == null)
+
+            if (accumulated == null)
             {
-                accumelated = val;
+                accumulated = val;
                 return;
             }
-            else
-            if (val is null)
-            {
-                return;
-            }
-            else
-            if (val is int)
-            {
 
-                accumelated = (int)accumelated + (int)val;
-            }
-            else
-            if (val is float)
+            if (val is int intVal)
             {
-
-                accumelated = (float)accumelated + (float)val;
+                accumulated = (int)accumulated + intVal;
             }
-            else
-            if (val is decimal)
+            else if (val is float floatVal)
             {
-
-                accumelated = Convert.ToDecimal(accumelated) + (decimal)val;
+                accumulated = (float)accumulated + floatVal;
             }
-            else
-            if (val is double)
+            else if (val is decimal decimalVal)
             {
-
-                accumelated = (double)accumelated + (double)val;
+                accumulated = Convert.ToDecimal(accumulated) + decimalVal;
             }
-            else
-            if (val is long)
+            else if (val is double doubleVal)
             {
-
-                accumelated = (long)accumelated + (long)val;
+                accumulated = (double)accumulated + doubleVal;
             }
-            else if (val is byte)
+            else if (val is long longVal)
             {
-
-                accumelated = (int)accumelated + (byte)val;
+                accumulated = (long)accumulated + longVal;
             }
-            else
+            else if (val is byte byteVal)
+            {
+                accumulated = (int)accumulated + byteVal;
+            }
+            else if (val is not null)
             {
                 throw new InvalidArgumentTypeException("Sum", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Sum");
             }
         }
-        public override object Return()
+
+        /// <summary>
+        /// Returns the accumulated sum.
+        /// </summary>
+        /// <returns>The accumulated sum.</returns>
+        public override object? Return()
         {
-            return accumelated ?? 0;
+            return accumulated ?? 0;
         }
+
+        /// <summary>
+        /// Resets the accumulated sum to 0.
+        /// </summary>
         public override void Reset()
         {
-            accumelated = 0;
+            accumulated = 0;
         }
     }
 }

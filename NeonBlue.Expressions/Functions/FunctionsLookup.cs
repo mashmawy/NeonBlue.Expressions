@@ -5,18 +5,21 @@ using NeonBlue.Expressions.Functions.DateFunctions;
 using NeonBlue.Expressions.Functions.MathFunctions;
 using NeonBlue.Expressions.Functions.StringFunctions;
 
-namespace NeonBlue.Expressions 
+namespace NeonBlue.Expressions
 {
     public class FunctionsLookup
     {
         private readonly List<IStackUpdateFunction> functions = [];
+
+        private readonly Dictionary<string, Action<Stack<Token>, IExecutionOptions>> Implementation = [];
+
         public FunctionsLookup()
         {
             functions.AddRange(
                 [
-                    new ISNULLFunction(),
+                    new IsnullFunction(),
                     new NotFunction(),
-                    new IIFFunction(),
+                    new IifFunction(),
                     new AndFunction(),
                     new OrFunction(),
                     new AbsFunction(),
@@ -93,17 +96,37 @@ namespace NeonBlue.Expressions
                 Implementation.Add(func.FunctionName, func.Update);
             }
         }
-        public readonly Dictionary<string, Action<Stack<Token>, IExecutionOptions>> Implementation = [];
+        /// <summary>
+        /// Executes the specified function on the given stack with the provided execution options.
+        /// </summary>
+        /// <param name="function">The name of the function to execute.</param>
+        /// <param name="stack">The stack of tokens.</param>
+        /// <param name="executionOptions">The execution options.</param>
         public void Exec(string function, Stack<Token> stack, IExecutionOptions executionOptions)
         {
             Implementation[function](stack, executionOptions);
         }
 
+        /// <summary>
+        /// Adds a custom function delegate to the registry.
+        /// </summary>
+        /// <param name="functionName">The name of the custom function.</param>
+        /// <param name="customFunctionDelegate">The delegate representing the custom function.</param>
         internal void AddCustomFunctionDelegate(string functionName, Delegate customFunctionDelegate)
         {
             var func = new CustomStackUpdateFunction(functionName, customFunctionDelegate);
             functions.Add(func);
             Implementation.Add(func.FunctionName, func.Update);
+        }
+
+        /// <summary>
+        /// Checks if the specified function name is registered.
+        /// </summary>
+        /// <param name="functionName">The name of the function to check.</param>
+        /// <returns>True if the function is registered, false otherwise.</returns> 
+        public bool IsFunction(string functionName)
+        {
+            return Implementation.ContainsKey(functionName);
         }
     }
 

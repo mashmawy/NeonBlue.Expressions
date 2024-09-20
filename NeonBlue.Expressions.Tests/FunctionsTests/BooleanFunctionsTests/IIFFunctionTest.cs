@@ -7,7 +7,7 @@ public class IIFFunctionTest
     [Fact]
     public void IIFFunctionUnitTrueConditionTest()
     {
-        IIFFunction iIFFunction = new();
+        IifFunction iIFFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(true, TokenType.Boolean));
         tokens.Push(new Token(10, TokenType.Integer));
@@ -24,7 +24,7 @@ public class IIFFunctionTest
     [Fact]
     public void IIFFunctionUnitFalseConditionTest()
     {
-        IIFFunction iIFFunction = new();
+        IifFunction iIFFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(false, TokenType.Boolean));
         tokens.Push(new Token(10, TokenType.Integer));
@@ -41,7 +41,7 @@ public class IIFFunctionTest
     [Fact]
     public void IIFFunctionShouldThrowNullExeception()
     {
-        IIFFunction iIFFunction
+        IifFunction iIFFunction
          = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null, TokenType.NULL));
@@ -56,7 +56,7 @@ public class IIFFunctionTest
     [Fact]
     public void IIFFunctionShouldThrowEmptyStackExeception()
     {
-        IIFFunction iIFFunction
+        IifFunction iIFFunction
          = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(true, TokenType.Boolean));
@@ -70,7 +70,7 @@ public class IIFFunctionTest
     [Fact]
     public void IIFFunctionShouldThrowInvalidArgumentTypeExeception()
     {
-        IIFFunction iIFFunction
+        IifFunction iIFFunction
          = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(DateTime.Now, TokenType.Datetime));

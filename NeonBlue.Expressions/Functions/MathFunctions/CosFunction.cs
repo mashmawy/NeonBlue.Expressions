@@ -1,16 +1,37 @@
 ﻿namespace NeonBlue.Expressions.Functions.MathFunctions
 {
+    /// <summary>
+    /// Represents the Cos function for calculating the cosine of a number.
+    /// </summary>
     public class CosFunction : StackUpdateFunction
     {
+        /// <summary>
+        /// Gets the name of the function.
+        /// </summary>
         public override string FunctionName => "cos";
-        public override void Update(Stack<Token> x, IExecutionOptions executionOptions)
+
+        /// <summary>
+        /// Updates the stack by calculating the cosine of the top numeric value.
+        /// </summary>
+        /// <param name="tokensStack">The stack of tokens.</param>
+        /// <param name="executionOptions">The execution options.</param>
+        /// <exception cref="EmptyStackException">Thrown if the stack is empty.</exception>
+        /// <exception cref="InvalidArgumentTypeException">Thrown if the token is not a numeric type.</exception>
+        /// <exception cref="MathException">Thrown if the cosine operation fails.</exception>
+        public override void Update(Stack<Token> tokensStack, IExecutionOptions executionOptions)
         {
-            if (x is null || x.Count < 1)
+            if (tokensStack == null || tokensStack.Count < 1)
             {
                 throw new EmptyStackException();
             }
-            var token = x.Pop();
-            if (MathFunctionUtils.NullCheck(x, token, executionOptions.NullStrategy)) return;
+
+            var token = tokensStack.Pop();
+
+            if (MathFunctionUtils.NullCheck(tokensStack, token, executionOptions.NullStrategy))
+            {
+                return;
+            }
+
             if (!TokensUtils.IsNumeric(token.TokenType))
             {
                 throw new InvalidArgumentTypeException(FunctionName, typeof(DateTime));
@@ -18,46 +39,55 @@
 
             try
             {
-                if (token.TokenType == TokenType.Integer)
+                switch (token.TokenType)
                 {
-                    var val = Convert.ToInt32(token.Value);
-                    x.Push(new Token(Math.Cos(val)));
-                }
-                else if (token.TokenType == TokenType.Long)
-                {
-                    var val = Convert.ToInt64(token.Value);
-                    x.Push(new Token(Math.Cos(val)));
-                }
-                else if (token.TokenType == TokenType.Double)
-                {
+                    case TokenType.Integer:
+                        {
+                            var val = Convert.ToInt32(token.Value);
+                            tokensStack.Push(new Token(Math.Cos(val)));
+                            break;
+                        }
 
-                    var val = Convert.ToDouble(token.Value);
-                    x.Push(new Token(Math.Cos(val)));
-                }
-                else if (token.TokenType == TokenType.Float)
-                {
-                    var val = Convert.ToSingle(token.Value);
-                    x.Push(new Token(Math.Cos(val)));
-                }
-                else if (token.TokenType == TokenType.Decimal)
-                {
+                    case TokenType.Long:
+                        {
+                            var val = Convert.ToInt64(token.Value);
+                            tokensStack.Push(new Token(Math.Cos(val)));
+                            break;
+                        }
 
-                    var val = Convert.ToDecimal(token.Value);
-                    x.Push(new Token(Math.Cos((double)val)));
-                }
-                else if (token.TokenType == TokenType.Byte)
-                {
-                    var val = Convert.ToByte(token.Value);
-                    x.Push(new Token(Math.Cos(val)));
+                    case TokenType.Double:
+                        {
+                            var val = Convert.ToDouble(token.Value);
+                            tokensStack.Push(new Token(Math.Cos(val)));
+                            break;
+                        }
+
+                    case TokenType.Float:
+                        {
+                            var val = Convert.ToSingle(token.Value);
+                            tokensStack.Push(new Token(Math.Cos(val)));
+                            break;
+                        }
+
+                    case TokenType.Decimal:
+                        {
+                            var val = Convert.ToDecimal(token.Value);
+                            tokensStack.Push(new Token(Math.Cos((double)val)));
+                            break;
+                        }
+
+                    case TokenType.Byte:
+                        {
+                            var val = Convert.ToByte(token.Value);
+                            tokensStack.Push(new Token(Math.Cos(val)));
+                            break;
+                        }
                 }
             }
             catch (Exception ex)
             {
                 throw new MathException(FunctionName, $"Math operation {FunctionName} can't be executed, see inner exception for more details", ex);
             }
-
-
         }
-
     }
 }

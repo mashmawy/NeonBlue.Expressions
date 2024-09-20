@@ -1,16 +1,32 @@
 ﻿namespace NeonBlue.Expressions.Functions.MathFunctions
 {
+
+    /// <summary>
+    /// Represents the Ceiling function for rounding a number up to the nearest integer.
+    /// </summary>
     public class CeilingFunction : StackUpdateFunction
     {
+        /// <summary>
+        /// Gets the name of the function.
+        /// </summary>
         public override string FunctionName => "ceiling";
-        public override void Update(Stack<Token> x, IExecutionOptions executionOptions)
+
+        /// <summary>
+        /// Updates the stack by rounding the top numeric value up to the nearest integer.
+        /// </summary>
+        /// <param name="tokensStack">The stack of tokens.</param>
+        /// <param name="executionOptions">The execution options.</param>
+        /// <exception cref="EmptyStackException">Thrown if the stack is empty.</exception>
+        /// <exception cref="InvalidArgumentTypeException">Thrown if the token is not a numeric type.</exception>
+        /// <exception cref="MathException">Thrown if the ceiling operation fails.</exception>
+        public override void Update(Stack<Token> tokensStack, IExecutionOptions executionOptions)
         {
-            if (x is null || x.Count < 1)
+            if (tokensStack is null || tokensStack.Count < 1)
             {
                 throw new EmptyStackException();
             }
-            var token = x.Pop();
-            if (MathFunctionUtils.NullCheck(x, token, executionOptions.NullStrategy)) return;
+            var token = tokensStack.Pop();
+            if (MathFunctionUtils.NullCheck(tokensStack, token, executionOptions.NullStrategy)) return;
             if (!TokensUtils.IsNumeric(token.TokenType))
             {
                 throw new InvalidArgumentTypeException(FunctionName, typeof(DateTime));
@@ -20,13 +36,13 @@
                 if (token.TokenType == TokenType.Decimal)
                 {
                     var arg2val = Convert.ToDecimal(token.Value);
-                    x.Push(new Token(Math.Ceiling(arg2val)));
+                    tokensStack.Push(new Token(Math.Ceiling(arg2val)));
                 }
                 else
                 {
 
                     var arg2val = Convert.ToDouble(token.Value);
-                    x.Push(new Token(Math.Ceiling(arg2val)));
+                    tokensStack.Push(new Token(Math.Ceiling(arg2val)));
                 }
             }
             catch (Exception ex)

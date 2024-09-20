@@ -1,8 +1,8 @@
-namespace NeonBlue.Expressions
+ namespace NeonBlue.Expressions
 {
     [Serializable]
     public class AggregateFunctionException : Exception
-    {
+    { 
         public AggregateFunctionException()
         {
         }

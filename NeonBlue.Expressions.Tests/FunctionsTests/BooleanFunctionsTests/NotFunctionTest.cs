@@ -5,11 +5,11 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.BooleanFunctionsTests;
 public class NotFunctionTest
 {
     [Fact]
-    public void ISNULLFunctionUnitFalseConditionTest()
+    public void NotFunctionUnitFalseConditionTest()
     {
         NotFunction notFunction = new();
         Stack<Token> tokens = new(); 
-        tokens.Push(new Token(10, TokenType.Integer)); 
+        tokens.Push(new Token(true, TokenType.Boolean)); 
 
         notFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
 
@@ -21,7 +21,7 @@ public class NotFunctionTest
 
     } 
     [Fact]
-    public void ISNULLFunctionUnitTrueConditionTest()
+    public void NotFunctionUnitTrueConditionTest()
     {
         NotFunction notFunction = new();
         Stack<Token> tokens = new(); 

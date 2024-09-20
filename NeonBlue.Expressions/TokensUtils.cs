@@ -113,7 +113,7 @@
         }
         internal static bool IsFunction(string name, FunctionsLookup functionsLookup)
         {
-            return functionsLookup.Implementation.ContainsKey(name);
+            return functionsLookup.IsFunction(name);
         }
     }
 }

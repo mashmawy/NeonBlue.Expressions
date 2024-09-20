@@ -77,9 +77,8 @@ public class CLongFunctionTest
         Assert.Single(tokens);
         var result = tokens.Pop();
         Assert.True(result.TokenType == TokenType.Long);
-
-            Assert.NotNull(result.Value);
-        Assert.Equal(typeof(int), result.Value.GetType());
+        Assert.NotNull(result.Value);
+        Assert.Equal(typeof(long), result.Value.GetType());
         Assert.Equal(0, Convert.ToInt64(result.Value));
 
     }

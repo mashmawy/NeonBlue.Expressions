@@ -1,28 +1,51 @@
 ﻿namespace NeonBlue.Expressions.Functions.DateFunctions
 {
+    /// <summary>
+    /// Represents the AddMinutes function for adding minutes to a date.
+    /// </summary>
     public class AddMinutesFunction : StackUpdateFunction
     {
+        /// <summary>
+        /// Gets the name of the function.
+        /// </summary>
         public override string FunctionName => "addminutes";
 
-        public override void Update(Stack<Token> x, IExecutionOptions executionOptions)
+        /// <summary>
+        /// Updates the stack by adding the specified number of minutes to the top date value.
+        /// </summary>
+        /// <param name="tokensStack">The stack of tokens.</param>
+        /// <param name="executionOptions">The execution options.</param>
+        /// <exception cref="EmptyStackException">Thrown if the stack contains fewer than two elements.</exception>
+        /// <exception cref="InvalidArgumentTypeException">Thrown if the first token is not a DateTime.</exception>
+        public override void Update(Stack<Token> tokensStack, IExecutionOptions executionOptions)
         {
-            if (x is null || x.Count < 2)
+            if (tokensStack == null || tokensStack.Count < 2)
             {
                 throw new EmptyStackException();
             }
-            var token2 = x.Pop();
-            var token1 = x.Pop();
 
-            if (DateFunctionsUtils.NullCheck(x, token1, executionOptions)) return;
-            if (DateFunctionsUtils.NullCheck(x, token2, executionOptions)) return;
+            var token2 = tokensStack.Pop();
+            var token1 = tokensStack.Pop();
+
+            if (DateFunctionsUtils.NullCheck(tokensStack, token1, executionOptions))
+            {
+                return;
+            }
+
+            if (DateFunctionsUtils.NullCheck(tokensStack, token2, executionOptions))
+            {
+                return;
+            }
+
             if (token1.TokenType != TokenType.Datetime)
             {
                 throw new InvalidArgumentTypeException(FunctionName, typeof(DateTime));
             }
+
             var arg1 = Convert.ToDateTime(token1.Value);
             var arg2 = Convert.ToDouble(token2.Value);
-            x.Push(new Token(arg1.AddMinutes(arg2)));
 
+            tokensStack.Push(new Token(arg1.AddMinutes(arg2)));
         }
     }
 }

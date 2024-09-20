@@ -1,24 +1,35 @@
 ﻿namespace NeonBlue.Expressions.Functions.StringFunctions
 {
+    /// <summary>
+    /// Represents the Trim function for trimming both leading and trailing whitespace characters from a string.
+    /// </summary>
     public class TrimFunction : StackUpdateFunction
     {
+        /// <summary>
+        /// Gets the name of the function.
+        /// </summary>
         public override string FunctionName => "trim";
-        public override void Update(Stack<Token> x, IExecutionOptions executionOptions)
+
+        /// <summary>
+        /// Updates the stack by trimming both leading and trailing whitespace characters from the top string value.
+        /// </summary>
+        /// <param name="tokensStack">The stack of tokens.</param>
+        /// <param name="executionOptions">The execution options.</param>
+        /// <exception cref="EmptyStackException">Thrown if the stack is empty.</exception>
+        /// <exception cref="InvalidArgumentTypeException">Thrown if the token is not a string type.</exception>
+        /// <exception cref="StringException">Thrown if the trim operation fails.</exception>
+        public override void Update(Stack<Token> tokensStack, IExecutionOptions executionOptions)
         {
-            // var token1 = x.Pop();
-            // if (StringFunctionsHelper.NullCheck(x, token1,executionOptions)) return;
-            // var arg1 = token1.Value!.ToString();
-            // x.Push(new Token(arg1!.Trim()));
-            if (x is null || x.Count < 1)
+            if (tokensStack is null || tokensStack.Count < 1)
             {
                 throw new EmptyStackException();
             }
-            var token1 = x.Pop();
-            if (StringFunctionsHelper.NullCheck(x, token1, executionOptions)) return;
+            var token1 = tokensStack.Pop();
+            if (StringFunctionsHelper.NullCheck(tokensStack, token1, executionOptions)) return;
             try
             {
                 var arg1 = token1.Value!.ToString();
-                x.Push(new Token(arg1!.Trim()));
+                tokensStack.Push(new Token(arg1!.Trim()));
             }
             catch (Exception ex)
             {

@@ -29,9 +29,9 @@ namespace NeonBlue.Expressions
         /// <param name="expression">The input expression to be tokenized.</param>
         public Tokenizer(string expression)
         {
-            ArgumentNullException.ThrowIfNull(expression,nameof(expression));
+            ArgumentNullException.ThrowIfNull(expression);
             _expression = expression;
-        
+
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace NeonBlue.Expressions
         /// <returns>A list of tokens representing the input expression.</returns>
         public List<IntermediateToken> Tokenize(FunctionsLookup functionsLookup)
         {
-            _functionsLookup= functionsLookup;
+            _functionsLookup = functionsLookup;
             while (_currentPosition < _expression.Length)
             {
                 var currentChar = _expression[_currentPosition];
@@ -87,19 +87,13 @@ namespace NeonBlue.Expressions
                     if (currentChar == '-')
                     {
                         var previousToken = _tokens.LastOrDefault();
-                        if (previousToken is null)
+                        if (previousToken is null || (!previousToken.IsNumber() && previousToken.Value != ")"))
                         {
                             _tokens.Add(new IntermediateToken(IntermediateTokenType.Double, "0", -1));
-                        }
-                        else if (!previousToken.IsNumber() && previousToken.Value != ")")
-                        {
-                            _tokens.Add(new IntermediateToken(IntermediateTokenType.Double, "0", -1));
-                        }
-
+                        } 
                     }
                     // Single-character operators or delimiters 
                     var tokenType = IntermediateTokenType.Operator;
-                    //  
                     _tokens.Add(new IntermediateToken(tokenType, currentChar.ToString(), _currentPosition));
                     _currentPosition++;
                 }
@@ -162,7 +156,7 @@ namespace NeonBlue.Expressions
                 _currentPosition++;
             }
             var word = variableBuilder.ToString();
-            if (TokensUtils.IsFunction(word,_functionsLookup!))
+            if (TokensUtils.IsFunction(word, _functionsLookup!))
             {
                 return new IntermediateToken(IntermediateTokenType.Function, variableBuilder.ToString(), startPos);
             }

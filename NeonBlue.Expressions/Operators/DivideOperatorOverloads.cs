@@ -36,7 +36,7 @@ namespace NeonBlue.Expressions.Operators
         private void AddByteOps()
         {
 
-            ByteValue_DivideOperatorOverloads overloads = new();
+            ByteValueDivideOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Byte, overloads);
         }
 

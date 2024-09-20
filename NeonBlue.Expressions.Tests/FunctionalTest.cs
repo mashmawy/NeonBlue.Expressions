@@ -172,7 +172,7 @@ public class FunctionalTest
         Assert.Equal(24.0, (double)res);
 
     }
-    public class Should_Handle_Null_values_probably
+    public class Should_Handle_Null_Values_Probably
     {
         [Fact]
         public void With_NullStrategy_default()
@@ -220,7 +220,7 @@ public class FunctionalTest
             });
         }
     }
-    public class Should_Handle_Null_values_IN_Plus
+    public class Should_Handle_Null_Values_In_Plus
     {
 
 
