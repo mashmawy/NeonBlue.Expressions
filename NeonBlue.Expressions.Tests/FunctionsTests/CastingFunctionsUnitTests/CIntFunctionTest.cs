@@ -63,7 +63,7 @@ public class CIntFunctionTest
         CIntFunction cIntFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             cIntFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

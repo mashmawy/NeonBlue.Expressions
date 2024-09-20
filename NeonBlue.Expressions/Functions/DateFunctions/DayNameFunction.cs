@@ -21,7 +21,7 @@ namespace NeonBlue.Expressions.Functions.DateFunctions
             if (DateFunctionsUtils.NullCheck(x, token2, executionOptions)) return;
             if (token1.TokenType != TokenType.Datetime)
             {
-                throw new InvalidArgumentTypeExeception(FunctionName, typeof(DateTime));
+                throw new InvalidArgumentTypeException(FunctionName, typeof(DateTime));
             }
 
             var arg1 = Convert.ToDateTime(token1.Value);
@@ -32,7 +32,7 @@ namespace NeonBlue.Expressions.Functions.DateFunctions
             }
             catch (Exception ex)
             {
-                throw new InvalidArgumentTypeExeception(FunctionName, typeof(DateTime), "Invalid date culture", ex);
+                throw new InvalidArgumentTypeException(FunctionName, typeof(DateTime), "Invalid date culture", ex);
             }
 
         }

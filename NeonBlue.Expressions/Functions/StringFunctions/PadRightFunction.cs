@@ -22,7 +22,7 @@ namespace NeonBlue.Expressions.Functions.StringFunctions
 
             if (!TokensUtils.IsNumeric(token2.TokenType))
             {
-                throw new InvalidArgumentTypeExeception(FunctionName, typeof(int));
+                throw new InvalidArgumentTypeException(FunctionName, typeof(int));
             }
             try
             {

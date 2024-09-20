@@ -71,7 +71,7 @@ namespace NeonBlue.Expressions.Aggregates.Aggergators
             }
             else
             {
-                throw new InvalidArgumentTypeExeception("Min", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Min");
+                throw new InvalidArgumentTypeException("Min", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Min");
             }
         }
         public override object? Return()

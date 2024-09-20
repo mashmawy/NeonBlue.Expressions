@@ -53,7 +53,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
             LowerFunction lowerFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            Assert.Throws<NullTokenExecption>(() =>
+            Assert.Throws<NullTokenException>(() =>
             {
                 lowerFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

@@ -53,7 +53,7 @@ public class CFloatFunctionTest
         CFloatFunction cFloatFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             cFloatFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

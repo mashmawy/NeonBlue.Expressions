@@ -30,7 +30,7 @@ namespace NeonBlue.Expressions.Operators.BooleanValue
             }
             else
             {
-                throw new NullTokenExecption(a2);
+                throw new NullTokenException(a2);
             }
 
 

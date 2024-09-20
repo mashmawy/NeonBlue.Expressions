@@ -52,7 +52,7 @@ public class CDoubleFunctionTest
         CDoubleFunction CDoubleFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             CDoubleFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

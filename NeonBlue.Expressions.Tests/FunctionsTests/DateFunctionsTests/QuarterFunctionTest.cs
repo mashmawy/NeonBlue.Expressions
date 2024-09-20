@@ -58,7 +58,7 @@ public class QuarterFunctionTest
         QuarterFunction quarterFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token("hello"));
-        Assert.Throws<InvalidArgumentTypeExeception>(() =>
+        Assert.Throws<InvalidArgumentTypeException>(() =>
         {
             quarterFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });
@@ -81,7 +81,7 @@ public class QuarterFunctionTest
         QuarterFunction quarterFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             quarterFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

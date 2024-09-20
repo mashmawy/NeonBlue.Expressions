@@ -12,7 +12,7 @@ namespace NeonBlue.Expressions.Functions.MathFunctions
             {
                 if (nullStrategy == NullStrategy.Throw)
                 {
-                    throw new NullTokenExecption(token);
+                    throw new NullTokenException(token);
 
                 }
                 else
@@ -27,7 +27,7 @@ namespace NeonBlue.Expressions.Functions.MathFunctions
         {
             if (nullStrategy == NullStrategy.Throw)
             {
-                throw new NullTokenExecption(token);
+                throw new NullTokenException(token);
 
             }
             else

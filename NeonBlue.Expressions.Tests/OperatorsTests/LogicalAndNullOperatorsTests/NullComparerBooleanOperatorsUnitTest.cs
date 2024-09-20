@@ -38,7 +38,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
             NullValue_CompareOperatorsOverloads divideOperatorOverloads = new();
             var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(false, TokenType.Datetime);
-            Assert.Throws<NullTokenExecption>(() =>
+            Assert.Throws<NullTokenException>(() =>
             {
                 divideOperatorOverloads.Evaluate(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             });

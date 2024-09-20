@@ -59,7 +59,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
             tokens.Push(new Token(null));
             tokens.Push(new Token(null));
             tokens.Push(new Token(null));
-            Assert.Throws<NullTokenExecption>(() =>
+            Assert.Throws<NullTokenException>(() =>
             {
                 substringFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

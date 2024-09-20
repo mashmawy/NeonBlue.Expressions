@@ -58,7 +58,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.NotEqualOperatorsTests
             NotEqualOperatorOverloads equalOperatorOverloads = new();
             var operand1 = new Token(true, TokenType.Boolean);
             var operand2 = new Token(null, TokenType.NULL);
-            Assert.Throws<NullTokenExecption>(() =>
+            Assert.Throws<NullTokenException>(() =>
             {
                 equalOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
             });

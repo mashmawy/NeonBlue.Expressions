@@ -20,7 +20,7 @@ namespace NeonBlue.Expressions.Functions.MathFunctions
             if (MathFunctionUtils.NullCheck(x, arg1, executionOptions.NullStrategy)) return;
             if (!TokensUtils.IsNumeric(arg1.TokenType) || !TokensUtils.IsNumeric(arg2.TokenType))
             {
-                throw new InvalidArgumentTypeExeception(FunctionName, arg1.GetType());
+                throw new InvalidArgumentTypeException(FunctionName, arg1.GetType());
             }
 
             try

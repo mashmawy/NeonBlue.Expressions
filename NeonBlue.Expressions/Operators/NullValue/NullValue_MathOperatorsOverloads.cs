@@ -25,7 +25,7 @@ namespace NeonBlue.Expressions.Operators.NullValue
 
             if (executionOptions.NullStrategy == NullStrategy.Throw)
             {
-                throw new NullTokenExecption(a1);
+                throw new NullTokenException(a1);
             }
             else
             {

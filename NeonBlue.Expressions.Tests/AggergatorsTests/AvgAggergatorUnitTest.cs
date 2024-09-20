@@ -42,7 +42,7 @@ public class AvgAggergatorUnitTest
     {
         object?[] x = ["2", "2", "2", "2", "2", "2"];
 
-        Assert.Throws<InvalidArgumentTypeExeception>(() =>
+        Assert.Throws<InvalidArgumentTypeException>(() =>
         {
             AvgAggregator avgAggregator = new();
             for (int i = 0; i < x.Length; i++)

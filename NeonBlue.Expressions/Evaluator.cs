@@ -1,8 +1,4 @@
-﻿using NeonBlue.Expressions;
-using NeonBlue.Expressions.Functions;
-using NeonBlue.Expressions.Operators;
-
-namespace NeonBlue.Expressions
+﻿namespace NeonBlue.Expressions
 {
     public class Evaluator
     {
@@ -191,7 +187,7 @@ namespace NeonBlue.Expressions
                 {
                     if (item.Value is null)
                     {
-                        throw new NullTokenExecption(item);
+                        throw new NullTokenException(item);
                     }
                     else
                     {
@@ -209,7 +205,7 @@ namespace NeonBlue.Expressions
                 {
                     if (item.Value is null)
                     {
-                        throw new NullTokenExecption(item);
+                        throw new NullTokenException(item);
                     }
                     else
                     {

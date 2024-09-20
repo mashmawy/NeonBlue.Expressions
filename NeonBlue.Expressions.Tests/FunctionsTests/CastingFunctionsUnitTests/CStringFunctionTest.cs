@@ -38,7 +38,7 @@ public class CStringFunctionTest
         CStringFunction cstringFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             cstringFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         }); 

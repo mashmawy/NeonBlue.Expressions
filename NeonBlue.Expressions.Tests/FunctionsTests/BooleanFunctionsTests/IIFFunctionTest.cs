@@ -50,7 +50,7 @@ public class IIFFunctionTest
         tokens.Push(new Token(true, TokenType.Boolean));
         tokens.Push(new Token(10, TokenType.Integer));
 
-        Assert.Throws<NullTokenExecption>(() => iIFFunction
+        Assert.Throws<NullTokenException>(() => iIFFunction
         .Update(tokens, new ExecutionOptions(NullStrategy.Throw)));
 
 
@@ -79,7 +79,7 @@ public class IIFFunctionTest
         tokens.Push(new Token(10, TokenType.Integer));
         tokens.Push(new Token(true, TokenType.Boolean));
 
-        Assert.Throws<InvalidArgumentTypeExeception>(() => iIFFunction
+        Assert.Throws<InvalidArgumentTypeException>(() => iIFFunction
         .Update(tokens, new ExecutionOptions(NullStrategy.Throw)));
 
 

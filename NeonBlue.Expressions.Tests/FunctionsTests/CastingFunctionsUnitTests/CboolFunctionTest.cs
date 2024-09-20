@@ -49,7 +49,7 @@ public class CBoolFunctionTest
         CBoolFunction cboolFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             cboolFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         }); 

@@ -53,7 +53,7 @@ public class CDateFunctionTest
         CDateTimeFunction CDateTimeFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             CDateTimeFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

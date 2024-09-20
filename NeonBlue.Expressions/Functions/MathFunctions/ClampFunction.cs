@@ -24,7 +24,7 @@ namespace NeonBlue.Expressions.Functions.MathFunctions
             !TokensUtils.IsNumeric(arg2.TokenType) ||
             !TokensUtils.IsNumeric(arg3.TokenType))
             {
-                throw new InvalidArgumentTypeExeception(FunctionName, typeof(DateTime));
+                throw new InvalidArgumentTypeException(FunctionName, typeof(DateTime));
             }
 
             try

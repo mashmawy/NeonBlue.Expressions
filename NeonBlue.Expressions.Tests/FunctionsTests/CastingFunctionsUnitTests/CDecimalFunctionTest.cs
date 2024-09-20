@@ -63,7 +63,7 @@ public class CDecimalFunctionTest
         CDecimalFunction CDecimalFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             CDecimalFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

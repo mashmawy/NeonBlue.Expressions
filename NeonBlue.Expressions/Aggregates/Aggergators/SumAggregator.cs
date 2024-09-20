@@ -58,7 +58,7 @@ namespace NeonBlue.Expressions.Aggregates.Aggergators
             }
             else
             {
-                throw new InvalidArgumentTypeExeception("Sum", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Sum");
+                throw new InvalidArgumentTypeException("Sum", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Sum");
             }
         }
         public override object Return()

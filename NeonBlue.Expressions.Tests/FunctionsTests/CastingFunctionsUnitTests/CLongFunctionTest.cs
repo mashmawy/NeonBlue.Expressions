@@ -63,7 +63,7 @@ public class CLongFunctionTest
         CLongFunction cLongFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             cLongFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

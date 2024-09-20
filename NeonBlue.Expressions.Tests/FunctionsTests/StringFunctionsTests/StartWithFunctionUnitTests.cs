@@ -56,7 +56,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
             tokens.Push(new Token(null));
-            Assert.Throws<NullTokenExecption>(() =>
+            Assert.Throws<NullTokenException>(() =>
             {
                 startWithFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

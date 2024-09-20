@@ -42,7 +42,7 @@ public class StdAggregatorUnitTest
     {
         object?[] x = ["2", "2", "2", "2", "2", "2"];
 
-        Assert.Throws<InvalidArgumentTypeExeception>(() =>
+        Assert.Throws<InvalidArgumentTypeException>(() =>
         {
             StdAggregator stdAggregator = new();
             for (int i = 0; i < x.Length; i++)

@@ -53,7 +53,7 @@ namespace NeonBlue.Expressions.Aggregates.Aggergators
             }
             else
             {
-                throw new InvalidArgumentTypeExeception("Avg", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Avg");
+                throw new InvalidArgumentTypeException("Avg", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Avg");
             }
         }
         public override object? Return()

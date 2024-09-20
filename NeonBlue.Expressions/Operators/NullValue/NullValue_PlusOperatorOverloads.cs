@@ -32,7 +32,7 @@
 //             }
 //             else
 //             {
-//                 throw new NullTokenExecption(a1);
+//                 throw new NullTokenException(a1);
 //             }
 //         }
 //         Token NullPlusNumeric(Token a1,Token a2, IExecutionOptions executionOptions)
@@ -40,7 +40,7 @@
 
 //             if (executionOptions.NullStrategy == NullStrategy.Throw)
 //             {
-//                 throw new NullTokenExecption(a1);
+//                 throw new NullTokenException(a1);
 //             }
 //             else
 //             {

@@ -42,7 +42,7 @@ public class DayNameFunctionTest
         Stack<Token> tokens = new();
         tokens.Push(new Token("hello"));
         tokens.Push(new Token("hello"));
-        Assert.Throws<InvalidArgumentTypeExeception>(() =>
+        Assert.Throws<InvalidArgumentTypeException>(() =>
         {
             dayNameFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });
@@ -67,7 +67,7 @@ public class DayNameFunctionTest
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             dayNameFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

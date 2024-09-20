@@ -36,7 +36,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             CbrtFunction cbrtFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token("hello"));
-            Assert.Throws<InvalidArgumentTypeExeception>(() =>
+            Assert.Throws<InvalidArgumentTypeException>(() =>
          {
              cbrtFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });
@@ -59,7 +59,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             CbrtFunction cbrtFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            Assert.Throws<NullTokenExecption>(() =>
+            Assert.Throws<NullTokenException>(() =>
             {
                 cbrtFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

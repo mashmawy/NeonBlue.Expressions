@@ -38,7 +38,7 @@ public class DayFunctionTest
         DayFunction dayFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token("hello"));
-        Assert.Throws<InvalidArgumentTypeExeception>(() =>
+        Assert.Throws<InvalidArgumentTypeException>(() =>
         {
             dayFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });
@@ -61,7 +61,7 @@ public class DayFunctionTest
         DayFunction dayFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             dayFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

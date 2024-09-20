@@ -121,7 +121,7 @@ public class LongMultiplyOperatorUnitTest
         MultiplyOperatorOverloads multiplyOperatorOverloads = new();
         var operand1 = new Token(2, TokenType.Long);
         var operand2 = new Token(null, TokenType.NULL);
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         { 
             multiplyOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
         });

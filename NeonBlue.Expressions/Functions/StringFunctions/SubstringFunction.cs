@@ -38,11 +38,11 @@ namespace NeonBlue.Expressions.Functions.StringFunctions
             if (StringFunctionsHelper.NullCheck(x, token3, executionOptions)) return;
             if (!TokensUtils.IsNumeric(token2.TokenType))
             {
-                throw new InvalidArgumentTypeExeception(FunctionName, typeof(int));
+                throw new InvalidArgumentTypeException(FunctionName, typeof(int));
             }
             if (!TokensUtils.IsNumeric(token3.TokenType))
             {
-                throw new InvalidArgumentTypeExeception(FunctionName, typeof(int));
+                throw new InvalidArgumentTypeException(FunctionName, typeof(int));
             }
             try
             {

@@ -42,7 +42,7 @@ public class VarAggregatorUnitTest
     {
         object?[] x = ["2", "2", "2", "2", "2", "2"];
 
-        Assert.Throws<InvalidArgumentTypeExeception>(() =>
+        Assert.Throws<InvalidArgumentTypeException>(() =>
         {
             VarAggregator varAggregator = new();
             for (int i = 0; i < x.Length; i++)

@@ -19,7 +19,7 @@ namespace NeonBlue.Expressions.Functions.BooleanFunctions
             if (!IsBoolean(token) && token.Value is not null)
             {
 
-                throw new InvalidArgumentTypeExeception
+                throw new InvalidArgumentTypeException
                     (function, token.Value.GetType(), $"Invalid Argument type {token.Value.GetType().Name} for function {function}");
 
             }
@@ -35,7 +35,7 @@ namespace NeonBlue.Expressions.Functions.BooleanFunctions
                 switch (nullStrategy)
                 {
                     case NullStrategy.Throw:
-                        throw new NullTokenExecption(token);
+                        throw new NullTokenException(token);
                     case NullStrategy.Default:
                         x.Push(new Token(false, TokenType.Boolean));
                         break;
@@ -59,7 +59,7 @@ namespace NeonBlue.Expressions.Functions.BooleanFunctions
             }
             else
             {
-                throw new NullTokenExecption(token);
+                throw new NullTokenException(token);
             }
 
         }

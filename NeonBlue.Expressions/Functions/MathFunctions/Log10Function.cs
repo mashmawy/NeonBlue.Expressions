@@ -17,7 +17,7 @@ namespace NeonBlue.Expressions.Functions.MathFunctions
             if (MathFunctionUtils.NullCheck(x, token, executionOptions.NullStrategy)) return;
             if (!TokensUtils.IsNumeric(token.TokenType))
             {
-                throw new InvalidArgumentTypeExeception(FunctionName, typeof(DateTime));
+                throw new InvalidArgumentTypeException(FunctionName, typeof(DateTime));
             }
 
             try

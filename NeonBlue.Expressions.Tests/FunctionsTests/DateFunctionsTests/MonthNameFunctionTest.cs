@@ -43,7 +43,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.DateFunctionsTests
             Stack<Token> tokens = new();
             tokens.Push(new Token("hello"));
             tokens.Push(new Token("hello"));
-            Assert.Throws<InvalidArgumentTypeExeception>(() =>
+            Assert.Throws<InvalidArgumentTypeException>(() =>
             {
                 monthNameFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });
@@ -68,7 +68,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.DateFunctionsTests
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
             tokens.Push(new Token(null));
-            Assert.Throws<NullTokenExecption>(() =>
+            Assert.Throws<NullTokenException>(() =>
             {
                 monthNameFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

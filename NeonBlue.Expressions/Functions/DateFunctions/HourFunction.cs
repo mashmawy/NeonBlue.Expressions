@@ -18,7 +18,7 @@ namespace NeonBlue.Expressions.Functions.DateFunctions
             if (DateFunctionsUtils.NullCheck(x, token1, executionOptions)) return;
             if (token1.TokenType != TokenType.Datetime)
             {
-                throw new InvalidArgumentTypeExeception(FunctionName, typeof(DateTime));
+                throw new InvalidArgumentTypeException(FunctionName, typeof(DateTime));
             }
             var arg1 = Convert.ToDateTime(token1.Value);
             x.Push(new Token(arg1.Hour));

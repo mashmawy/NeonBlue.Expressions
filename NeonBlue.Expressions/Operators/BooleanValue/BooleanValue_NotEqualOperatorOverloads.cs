@@ -28,7 +28,7 @@ namespace NeonBlue.Expressions.Operators.BooleanValue
             }
             else
             {
-                throw new NullTokenExecption(a2);
+                throw new NullTokenException(a2);
             }
         }
         Token BooleanNotEqualBoolean(Token a1, Token a2, IExecutionOptions executionOptions)

@@ -11,7 +11,7 @@ namespace NeonBlue.Expressions.Functions.DateFunctions
             {
                 if (executionOptions.NullStrategy == NullStrategy.Throw)
                 {
-                    throw new NullTokenExecption(token);
+                    throw new NullTokenException(token);
 
                 }
                 else

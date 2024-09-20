@@ -36,7 +36,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             AtanhFunction atanhFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token("hello"));
-            Assert.Throws<InvalidArgumentTypeExeception>(() =>
+            Assert.Throws<InvalidArgumentTypeException>(() =>
          {
              atanhFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });
@@ -59,7 +59,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             AtanhFunction atanhFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            Assert.Throws<NullTokenExecption>(() =>
+            Assert.Throws<NullTokenException>(() =>
             {
                 atanhFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

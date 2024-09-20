@@ -37,7 +37,7 @@ namespace NeonBlue.Expressions.Operators.NullValue
             }
             else
             {
-                throw new NullTokenExecption(a1);
+                throw new NullTokenException(a1);
             }
         }
         Token NullEqualAny(Token a1, Token a2, IExecutionOptions executionOptions)
@@ -52,7 +52,7 @@ namespace NeonBlue.Expressions.Operators.NullValue
             }
             else
             {
-                throw new NullTokenExecption(a1);
+                throw new NullTokenException(a1);
             }
         }
 

@@ -40,7 +40,7 @@ public class MinutesFunctionTest
         MinutesFunction minutesFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token("hello"));
-        Assert.Throws<InvalidArgumentTypeExeception>(() =>
+        Assert.Throws<InvalidArgumentTypeException>(() =>
         {
             minutesFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });
@@ -63,7 +63,7 @@ public class MinutesFunctionTest
         MinutesFunction minutesFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             minutesFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

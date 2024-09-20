@@ -81,7 +81,7 @@ namespace NeonBlue.Expressions.Aggregates.Aggergators
             }
             else
             {
-                throw new InvalidArgumentTypeExeception("Max", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Max");
+                throw new InvalidArgumentTypeException("Max", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Max");
             }
         }
         public override object? Return()

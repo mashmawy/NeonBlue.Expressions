@@ -22,7 +22,7 @@ namespace NeonBlue.Expressions.Aggregates.Aggergators
              val.GetType() != typeof(float) &&
              val.GetType() != typeof(decimal))
             {
-                throw new InvalidArgumentTypeExeception
+                throw new InvalidArgumentTypeException
                        ("Std", val.GetType(), $"Invalid Argument type {val.GetType().Name} for aggregate function Std");
 
             }

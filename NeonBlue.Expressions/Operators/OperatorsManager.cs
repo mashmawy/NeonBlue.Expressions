@@ -1,4 +1,6 @@
-﻿namespace NeonBlue.Expressions.Operators
+﻿using NeonBlue.Expressions.Operators;
+
+namespace NeonBlue.Expressions
 {
     public class OperatorsManager
     {

@@ -12,7 +12,7 @@ namespace NeonBlue.Expressions.Functions.CastingFunctions
                 switch (executionOptions.NullStrategy)
                 {
                     case NullStrategy.Throw:
-                        throw new NullTokenExecption(token);
+                        throw new NullTokenException(token);
                     case NullStrategy.Default:
                         x.Push(defaultToken);
                         break;

@@ -39,7 +39,7 @@ public class MonthFunctionTest
         MonthFunction monthFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token("hello"));
-        Assert.Throws<InvalidArgumentTypeExeception>(() =>
+        Assert.Throws<InvalidArgumentTypeException>(() =>
         {
             monthFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });
@@ -62,7 +62,7 @@ public class MonthFunctionTest
         MonthFunction monthFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             monthFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

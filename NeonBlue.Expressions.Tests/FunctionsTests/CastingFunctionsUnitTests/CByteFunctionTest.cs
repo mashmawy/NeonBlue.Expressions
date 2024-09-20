@@ -63,7 +63,7 @@ public class CByteFunctionTest
         CByteFunction cByteFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             cByteFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
         });

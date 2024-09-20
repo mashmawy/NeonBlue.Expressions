@@ -1,10 +1,11 @@
-﻿using NeonBlue.Expressions.Functions.BooleanFunctions;
+﻿using NeonBlue.Expressions.Functions;
+using NeonBlue.Expressions.Functions.BooleanFunctions;
 using NeonBlue.Expressions.Functions.CastingFunctions;
 using NeonBlue.Expressions.Functions.DateFunctions;
 using NeonBlue.Expressions.Functions.MathFunctions;
 using NeonBlue.Expressions.Functions.StringFunctions;
 
-namespace NeonBlue.Expressions.Functions
+namespace NeonBlue.Expressions 
 {
     public class FunctionsLookup
     {

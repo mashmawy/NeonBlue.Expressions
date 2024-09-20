@@ -42,7 +42,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             tokens.Push(new Token("hello"));
             tokens.Push(new Token("hello"));
             tokens.Push(new Token("hello"));
-            Assert.Throws<InvalidArgumentTypeExeception>(() =>
+            Assert.Throws<InvalidArgumentTypeException>(() =>
          {
              clampFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
          });
@@ -69,7 +69,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             tokens.Push(new Token(null));
             tokens.Push(new Token(null));
             tokens.Push(new Token(null));
-            Assert.Throws<NullTokenExecption>(() =>
+            Assert.Throws<NullTokenException>(() =>
             {
                 clampFunction.Update(tokens, new ExecutionOptions(NullStrategy.Throw));
             });

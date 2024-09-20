@@ -1,6 +1,4 @@
-using System.Runtime.Serialization;
-
-namespace NeonBlue.Expressions
+ namespace NeonBlue.Expressions
 {
     [Serializable]
     public class StringException : Exception

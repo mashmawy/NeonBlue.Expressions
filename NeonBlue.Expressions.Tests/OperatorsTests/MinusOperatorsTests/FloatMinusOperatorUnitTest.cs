@@ -122,7 +122,7 @@ public class FloatMinusOperatorUnitTest
         MinusOperatorOverloads divideOperatorOverloads = new();
         var operand1 = new Token(200f, TokenType.Float);
         var operand2 = new Token(null, TokenType.NULL);
-        Assert.Throws<NullTokenExecption>(() =>
+        Assert.Throws<NullTokenException>(() =>
         {
             divideOperatorOverloads.Run(operand1, operand2, new ExecutionOptions(NullStrategy.Throw));
         });
