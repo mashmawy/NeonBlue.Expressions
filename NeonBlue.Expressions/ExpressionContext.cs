@@ -16,7 +16,7 @@
             {
                 return val;
             }
-            throw new Exception($"Unknown Variable {name}");
+            throw new VariableNotFoundException($"Unknown Variable {name}");
         }
 
         public Token GetValueToken(string name)
@@ -27,7 +27,7 @@
         {
             if (variablesTypes.TryGetValue(name, out var type)) return type;
 
-            throw new Exception($"Unknown Variable {name}");
+            throw new VariableNotFoundException($"Unknown Variable {name}");
         }
         public void SetVariable(string name, object? value)
         {
@@ -116,6 +116,7 @@
 
 
     }
+
 }
 
 
