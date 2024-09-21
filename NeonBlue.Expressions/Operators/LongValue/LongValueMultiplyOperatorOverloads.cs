@@ -15,7 +15,7 @@ namespace NeonBlue.Expressions.Operators.LongValue
         {
             if (overloads.Count == 0)
             {
-                overloads.Add(TokenType.Byte, LongMultiplyInteger);
+                overloads.Add(TokenType.Byte, LongMultiplyByte);
                 overloads.Add(TokenType.Integer, LongMultiplyInteger);
                 overloads.Add(TokenType.Long, LongMultiplyLong);
                 overloads.Add(TokenType.Decimal, LongMultiplyDecimal);
@@ -63,7 +63,7 @@ namespace NeonBlue.Expressions.Operators.LongValue
         private static Token LongMultiplyByte(Token a1, Token a2, IExecutionOptions executionOptions)
         {
             var arg1 = Convert.ToInt64(a1.Value);
-            int arg2 = Convert.ToInt32(a2.Value);
+            var arg2 = Convert.ToByte(a2.Value);
             return new Token(arg1 * arg2, TokenType.Long);
         }
 

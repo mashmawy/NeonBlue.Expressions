@@ -8,12 +8,12 @@
         /// <summary>
         /// A dictionary to store variable values.
         /// </summary>
-        private readonly Dictionary<string, object?> variables = new();
+        private readonly Dictionary<string, object?> variables = [];
 
         /// <summary>
         /// A dictionary to store variable types.
         /// </summary>
-        private readonly Dictionary<string, TokenType> variablesTypes = new();
+        private readonly Dictionary<string, TokenType> variablesTypes = [];
 
         /// <summary>
         /// Checks if a variable exists in the context.
@@ -113,6 +113,7 @@
         /// </summary>
         public ExpressionContext()
         {
+             
         }
     }
 

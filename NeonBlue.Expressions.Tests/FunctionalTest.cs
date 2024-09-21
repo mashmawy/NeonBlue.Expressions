@@ -37,7 +37,7 @@ public class FunctionalTest
         Assert.Equal(IntermediateTokenType.Integer, tokens[4].TokenType);
         Assert.Equal("3", tokens[4].Value);
     }
-   
+
     [Fact]
     public void Can_Add_Custom_Function()
     {
@@ -62,37 +62,67 @@ public class FunctionalTest
     {
         //creating the expression.
         Expression neonBlueExpression = "multiarg(y,maDate,b)";
-        
+
         //creating the evaluator object.
         var evaluator = new Evaluator(new ExecutionOptions(NullStrategy.Throw));
 
         //creating multi argument function.
-        Func<int,DateTime,bool, string> multiarg = (a,d,i) => { return $"{i} and {d.ToShortDateString()} {a}"; };
+        Func<int, DateTime, bool, string> multiarg = (a, d, i) => { return $"{i} and {d.ToShortDateString()} {a}"; };
 
         //register the function with a unique name.
         evaluator.AddCustomFunction("multiarg", multiarg);
- 
+
         //define values.
         int y = 10;
         bool b = false;
         DateTime maDate = DateTime.Now;
 
         //creating the expression parameters.
-        var paramaters= 
-        new ExpressionParameters(new ExpressionParameter("y", y),new ExpressionParameter("b", b),new ExpressionParameter("maDate", maDate));
+        var paramaters =
+        new ExpressionParameters(new ExpressionParameter("y", y), new ExpressionParameter("b", b), new ExpressionParameter("maDate", maDate));
 
         //evaluate the expression given the parameters and expect string result.
-        var result = evaluator.Evaluate<string?>(neonBlueExpression,paramaters);
+        var result = evaluator.Evaluate<string?>(neonBlueExpression, paramaters);
 
         //display the result
         Console.WriteLine($"the result of the expression is ({result})");
 
-        
+
         Assert.NotNull(result);
         Assert.Equal($"{b} and {maDate.ToShortDateString()} {y}", result.ToString());
 
     }
+    [Fact]
+    public void Can_Do_Power_Operator()
+    {
+        //creating the expression.
+        Expression neonBlueExpression = "6.4^8.4 * 20 + 3";
 
+        //creating the evaluator object.
+        var evaluator = new Evaluator(new ExecutionOptions(NullStrategy.Throw));
+
+        //evaluate the expression given the parameters and expect string result.
+        var result = evaluator.Evaluate<double?>(neonBlueExpression, new ExpressionParameters());
+
+
+        Assert.NotNull(result); 
+        Assert.Equal(Math.Pow(6.4, 8.4) * 20 + 3, result);
+
+    }
+
+    [Fact]
+    public void Should_Handle_keywords()
+    { 
+        Expression neonBlueExpression = new($"iif(true,pi,null)");
+        var evaluator = new Evaluator();
+
+        var res =
+        evaluator.Evaluate(neonBlueExpression );
+        Assert.NotNull(res);
+        Assert.Equal(typeof(double), res!.GetType());
+        Assert.Equal(Math.PI, (double)res);
+
+    }
 
     [Fact]
     public void Should_Handle_Nasted_Expressions()
@@ -122,13 +152,13 @@ public class FunctionalTest
         double[] x = [2, 2];
         double[] x2 = [20, 45, 60];
         double y = 10;
-        
+
         Expression neonBlueExpression = "-1 + (-sum(x )+countd(x2) + (y -2) ) ";
 
         var evaluator = new Evaluator(new ExecutionOptions(NullStrategy.Throw));
-        var paramaters =  new ExpressionParameters(new ExpressionParameter("x", x), new ExpressionParameter("x2", x2), new ExpressionParameter("y", y));
+        var paramaters = new ExpressionParameters(new ExpressionParameter("x", x), new ExpressionParameter("x2", x2), new ExpressionParameter("y", y));
         var res =
-        evaluator.Evaluate<double?>(neonBlueExpression,paramaters);
+        evaluator.Evaluate<double?>(neonBlueExpression, paramaters);
         Assert.NotNull(res);
         Assert.Equal(6.0, res);
 

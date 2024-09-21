@@ -15,7 +15,7 @@ namespace NeonBlue.Expressions.Operators.FloatValue
         {
             if (overloads.Count == 0)
             {
-                overloads.Add(TokenType.Byte, FloatPercentageInteger);
+                overloads.Add(TokenType.Byte, FloatPercentageByte);
                 overloads.Add(TokenType.Integer, FloatPercentageInteger);
                 overloads.Add(TokenType.Long, FloatPercentageLong);
                 overloads.Add(TokenType.Decimal, FloatPercentageDecimal);

@@ -29,6 +29,15 @@
             }
         }
         /// <summary>
+        /// Initializes a new instance of the Evaluator class, with default execution options and default null strategy.
+        /// </summary>
+        /// <exception cref="NeonBlueExpressionException">Thrown if an error occurs during the creation of the Evaluator object. The inner exception provides more details about the specific error.</exception>
+        public Evaluator()
+        {
+            _executionOptions = new ExecutionOptions(NullStrategy.Default);
+
+        }
+        /// <summary>
         /// Initializes a new instance of the Evaluator class, providing the necessary context and execution options for evaluating expressions.
         /// </summary>
         /// <param name="executionOptions">An IExecutionOptions object that specifies the execution options for expression evaluation.</param>
@@ -62,7 +71,7 @@
         /// <param name="expression">A string representing the expression to be evaluated.</param>
         /// <returns>An object? representing the result of the evaluation. The return type can be any data type supported by the expression language.</returns>
         /// <exception cref="NeonBlueExpressionException">Thrown if an error occurs during the evaluation process. The inner exception provides more details about the specific error.</exception>
-        public object? Evaluate(string expression)
+        public object? SimpleEvaluation(string expression)
         {
             if (compiledCache.TryGetValue(expression, out List<Token>? value))
             {
@@ -89,7 +98,7 @@
             {
                 neonBlueExpression.Init(_functionsLookup);
                 var noneArrayParamters = dataSource.GetParameters().Where(p => !p.IsArray);
-                foreach (var item in noneArrayParamters.Select(p=>p.Name))
+                foreach (var item in noneArrayParamters.Select(p => p.Name))
                 {
                     _context.SetVariable(item, dataSource.GetValue(item));
                 }
@@ -108,14 +117,14 @@
                         }
                         foreach (Aggregates.AggregatedExpressionPart? var in parts)
                         {
-                            object? evalagg = Evaluate(var.Expression);
+                            object? evalagg = SimpleEvaluation(var.Expression);
                             var.GetAggregator("x")?.Update(evalagg);
                         }
 
                     }
                 }
                 dataSource.Reset();
-                return AggregateAndEvaluate(neonBlueExpression); 
+                return AggregateAndEvaluate(neonBlueExpression);
             }
             catch (Exception ex)
             {
@@ -133,6 +142,31 @@
         public T? Evaluate<T>(Expression neonBlueExpression, ExpressionParameters dataSource)
         {
             return ConvertTo<T>(Evaluate(neonBlueExpression, dataSource));
+        }
+
+
+
+
+        /// <summary>
+        /// Evaluates the provided Expression object using empty ExpressionParameters object as the data source.
+        /// </summary>
+        /// <param name="neonBlueExpression">An Expression object representing the formula to be evaluated.</param>
+        /// <returns>An object? representing the result of the evaluation. The return type can be any data type supported by the expression language.</returns>
+        /// <exception cref="NeonBlueExpressionException">Thrown if an error occurs during the evaluation process. The inner exception provides more details about the specific error.</exception>
+        public object? Evaluate(Expression neonBlueExpression)
+        {
+            return Evaluate(neonBlueExpression, new ExpressionParameters());
+        }
+
+        /// <summary>
+        /// Evaluates the provided Expression object, converts the result to the specified type T, and returns it.
+        /// </summary> 
+        /// <param name="neonBlueExpression">An Expression object representing the formula to be evaluated.</param>
+        /// <returns>A generic T? representing the result of the evaluation, converted to the specified type. The return type can be any data type supported by your expression language.</returns>
+        /// <exception cref="NeonBlueExpressionException">Thrown if an error occurs during the evaluation process. The inner exception provides more details about the specific error.</exception>
+        public T? Evaluate<T>(Expression neonBlueExpression)
+        {
+            return ConvertTo<T>(Evaluate(neonBlueExpression));
         }
 
         private object? Evaluate(List<Token> expressionList)
@@ -178,7 +212,7 @@
                 if (Aggergator != null)
                     _context.SetVariable(e.Id, Aggergator.Return());
             }
-            return Evaluate(neonBlueExpression.finalFormula);
+            return SimpleEvaluation(neonBlueExpression.finalFormula);
 
         }
         private void Scan(Token item, Stack<Token> evaluationStack, IExpressionContext table, IExecutionOptions executionOptions)

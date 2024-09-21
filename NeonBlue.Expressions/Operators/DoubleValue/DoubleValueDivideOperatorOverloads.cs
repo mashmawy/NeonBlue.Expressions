@@ -2,6 +2,9 @@
 
 namespace NeonBlue.Expressions.Operators.DoubleValue
 {
+
+
+
     /// <summary>
     /// Represents the operator overloads for division operations involving Double values.
     /// </summary>

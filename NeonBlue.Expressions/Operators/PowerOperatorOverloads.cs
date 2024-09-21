@@ -1,4 +1,5 @@
-﻿using NeonBlue.Expressions.Operators.ByteValue;
+﻿using NeonBlue.Expressions.Functions.MathFunctions;
+using NeonBlue.Expressions.Operators.ByteValue;
 using NeonBlue.Expressions.Operators.DeicmalValue;
 using NeonBlue.Expressions.Operators.DoubleValue;
 using NeonBlue.Expressions.Operators.FloatValue;
@@ -9,14 +10,14 @@ using NeonBlue.Expressions.Operators.NullValue;
 namespace NeonBlue.Expressions.Operators
 {
     /// <summary>
-    /// Represents the operator overloads for percentage operations.
+    /// Represents the operator overloads for power operations.
     /// </summary>
-    public class PercentageOperatorOverloads : IOperator
+    public class PowerOperatorOverloads : IOperator
     {
         /// <summary>
         /// Gets the operator type.
         /// </summary>
-        public TokenType OperatorType { get; } = TokenType.Percentage;
+        public TokenType OperatorType { get; } = TokenType.Power;
 
         /// <summary>
         /// A dictionary of operator overloads for different data types.
@@ -24,9 +25,9 @@ namespace NeonBlue.Expressions.Operators
         private readonly Dictionary<TokenType, OperatorsOverload> typesOverloads = [];
 
         /// <summary>
-        /// Initializes a new instance of the PercentageOperatorOverloads class.
+        /// Initializes a new instance of the PowerOperatorOverloads class.
         /// </summary>
-        public PercentageOperatorOverloads()
+        public PowerOperatorOverloads()
         {
             AddIntegerOps();
             AddByteOps();
@@ -42,7 +43,7 @@ namespace NeonBlue.Expressions.Operators
         /// </summary>
         private void AddIntegerOps()
         {
-            IntegerValuePercentageOperatorOverloads overloads = new();
+            IntegerValuePowerOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Integer, overloads);
         }
 
@@ -51,7 +52,7 @@ namespace NeonBlue.Expressions.Operators
         /// </summary>
         private void AddByteOps()
         {
-            ByteValuePercentageOperatorOverloads overloads = new();
+            ByteValuePowerOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Byte, overloads);
         }
 
@@ -60,7 +61,7 @@ namespace NeonBlue.Expressions.Operators
         /// </summary>
         private void AddLongOps()
         {
-            LongValuePercentageOperatorOverloads overloads = new();
+            LongValuePowerOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Long, overloads);
         }
 
@@ -69,7 +70,7 @@ namespace NeonBlue.Expressions.Operators
         /// </summary>
         private void AddDecimalOps()
         {
-            DecimalValuePercentageOperatorOverloads overloads = new();
+            DecimalValuePowerOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Decimal, overloads);
         }
 
@@ -78,7 +79,7 @@ namespace NeonBlue.Expressions.Operators
         /// </summary>
         private void AddFloatOps()
         {
-            FloatValuePercentageOperatorOverloads overloads = new();
+            FloatValuePowerOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Float, overloads);
         }
 
@@ -87,7 +88,7 @@ namespace NeonBlue.Expressions.Operators
         /// </summary>
         private void AddDoubleOps()
         {
-            DoubleValuePercentageOperatorOverloads overloads = new();
+            DoubleValuePowerOperatorOverloads overloads = new();
             typesOverloads.Add(TokenType.Double, overloads);
         }
 
@@ -101,19 +102,27 @@ namespace NeonBlue.Expressions.Operators
         }
 
         /// <summary>
-        /// Executes the percentage operation based on the operand types.
+        /// Executes the power operation based on the operand types and the null strategy.
         /// </summary>
         /// <param name="operand1">The first operand.</param>
         /// <param name="operand2">The second operand.</param>
         /// <param name="executionOptions">The execution options.</param>
-        /// <returns>The result of the percentage operation.</returns>
+        /// <returns>The result of the power operation.</returns>
         public Token Run(Token operand1, Token operand2, IExecutionOptions executionOptions)
         {
             if (typesOverloads.TryGetValue(operand1.TokenType, out OperatorsOverload? overloads))
             {
+                if (operand1.Value is null || operand2.Value is null)
+                {
+                    // Handle null operands according to the null strategy
+                    return MathFunctionUtils.NullCheck(operand2, executionOptions.NullStrategy);
+                } 
+
+                // Delegate the operation to the appropriate overload
                 return overloads.Evaluate(operand1, operand2, executionOptions);
             }
 
+            // If no overload is found, throw an exception
             throw new InvalidOperationException();
         }
     }

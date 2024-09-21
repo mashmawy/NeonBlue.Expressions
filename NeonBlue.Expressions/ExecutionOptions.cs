@@ -14,21 +14,17 @@ namespace NeonBlue.Expressions
     /// <summary>
     /// Concrete implementation of IExecutionOptions, providing null strategy options.
     /// </summary>
-    public class ExecutionOptions : IExecutionOptions
+    /// <remarks>
+    /// Initializes a new instance of the ExecutionOptions class with the specified null strategy.
+    /// </remarks>
+    /// <param name="nullStrategy">The null strategy to use.</param>
+    public class ExecutionOptions(NullStrategy nullStrategy) : IExecutionOptions
     {
-        /// <summary>
-        /// Initializes a new instance of the ExecutionOptions class with the specified null strategy.
-        /// </summary>
-        /// <param name="nullStrategy">The null strategy to use.</param>
-        public ExecutionOptions(NullStrategy nullStrategy)
-        {
-            NullStrategy = nullStrategy;
-        }
 
         /// <summary>
         /// Gets or sets the null strategy to be used during evaluation.
         /// </summary>
-        public NullStrategy NullStrategy { get; private set; }
+        public NullStrategy NullStrategy { get; private set; } = nullStrategy;
     }
 
     /// <summary>

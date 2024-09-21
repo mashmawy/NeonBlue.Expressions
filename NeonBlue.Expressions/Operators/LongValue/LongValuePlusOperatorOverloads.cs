@@ -2,6 +2,8 @@
 
 namespace NeonBlue.Expressions.Operators.LongValue
 {
+
+
     /// <summary>
     /// Represents the operator overloads for addition operations involving Long values.
     /// </summary>

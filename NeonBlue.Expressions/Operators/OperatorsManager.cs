@@ -28,6 +28,7 @@ namespace NeonBlue.Expressions
                     {TokenType.Divide, new DivideOperatorOverloads()},
 
                     {TokenType.Percentage, new PercentageOperatorOverloads()},
+                    {TokenType.Power, new PowerOperatorOverloads()},
 
                     {TokenType.Equal, new EqualOperatorOverloads()},
 

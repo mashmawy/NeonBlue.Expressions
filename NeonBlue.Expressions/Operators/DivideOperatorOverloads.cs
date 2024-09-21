@@ -22,7 +22,7 @@ namespace NeonBlue.Expressions.Operators
         /// <summary>
         /// A dictionary of operator overloads for different data types.
         /// </summary>
-        private readonly Dictionary<TokenType, OperatorsOverload> typesOverloads = new();
+        private readonly Dictionary<TokenType, OperatorsOverload> typesOverloads = [];
 
         /// <summary>
         /// Initializes a new instance of the DivideOperatorOverloads class.

@@ -8,7 +8,7 @@ namespace NeonBlue.Expressions.Operators
         /// <summary>
         /// A dictionary mapping token types to functions that handle specific operations.
         /// </summary>
-        protected readonly Dictionary<TokenType, Func<Token, Token, IExecutionOptions, Token>> overloads = new();
+        protected readonly Dictionary<TokenType, Func<Token, Token, IExecutionOptions, Token>> overloads = [];
 
         /// <summary>
         /// Gets the dictionary of overloads.

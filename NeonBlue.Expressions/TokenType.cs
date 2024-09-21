@@ -30,6 +30,14 @@
         /// </summary>
         Percentage,
 
+
+
+        /// <summary>
+        /// Power operator (^).
+        /// </summary>
+        Power,
+        
+
         /// <summary>
         /// Logical AND operator (&&).
         /// </summary>

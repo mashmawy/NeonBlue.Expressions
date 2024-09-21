@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using NeonBlue.Expressions.Aggregates;
 using NeonBlue.Expressions.Operators;
@@ -8,7 +9,7 @@ namespace NeonBlue.Expressions
     public static class ExpressionAnalyzer
     {
         internal static readonly string[] specialTokens
-            = ["=", "==", "&&", "||", "!=", ">", "<", "<=", ">=", "-", "+", "%", "/", "*", "!", "'", ",", "(", ")"];
+            = ["=", "==", "&&", "||", "!=", ">", "<", "<=", ">=", "-", "+", "%", "/", "*", "!", "'", ",", "^", "(", ")"];
 
 
         /// <summary>
@@ -158,6 +159,7 @@ namespace NeonBlue.Expressions
             // Iterate through each intermediate token
             foreach (var token in intermediaTokens)
             {
+             
                 // Handle string literals
                 if (token.TokenType == IntermediateTokenType.String)
                 {
@@ -167,6 +169,14 @@ namespace NeonBlue.Expressions
                     continue;
                 }
 
+
+                // Handle keywords
+                var keyWord = GetKeywordToken(token.Value, token.Pos); 
+                if (keyWord is not null)
+                {
+                    expressionList.Add(keyWord);
+                    continue;
+                }
                 // Handle variables
                 if (token.Value is not null && table.HasVariable(token.Value))
                 {
@@ -235,9 +245,9 @@ namespace NeonBlue.Expressions
             return expressionList;
         }
 
-         
-       
-        
+
+
+
         private static int Priority(string? x, string[] separatingStrings, FunctionsLookup functionsLookup)
         {
             switch (x)
@@ -252,20 +262,35 @@ namespace NeonBlue.Expressions
                     return 4;
                 case "*" or "/" or "%":
                     return 5;
-                case "!":
+                case "^":
                     return 6;
+                case "!":
+                    return 7;
                 default:
                     {
                         if (separatingStrings.Contains(x)) return 1;
                         if (x is not null && TokensUtils.IsFunction(x, functionsLookup))
                         {
-                            return 7;
+                            return 8;
                         }
 
                         break;
                     }
             }
-            return 8;
+            return 9;
+        }
+
+        private static Token? GetKeywordToken(string? word, int pos)
+        {
+            return word switch
+            {
+                "null" => new(null, TokenType.NULL, pos, false, false),
+                "true" => new(true, TokenType.Boolean, pos, false, false),
+                "false" => new(false, TokenType.Boolean, pos, false, false),
+                "pi" => new(Math.PI, TokenType.Double, pos, false, false),
+                "tau" => new(Math.Tau, TokenType.Double, pos, false, false),
+                _ => null,
+            };
         }
 
     }

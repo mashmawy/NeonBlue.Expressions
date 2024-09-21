@@ -9,6 +9,7 @@
             { "/", TokenType.Divide },
             { "*", TokenType.Multiply },
             { "%", TokenType.Percentage },
+            { "^", TokenType.Power },
             { "&&", TokenType.LogicalAnd },
             { "||", TokenType.LogicalOr },
             { "=", TokenType.Equal },
