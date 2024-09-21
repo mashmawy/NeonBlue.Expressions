@@ -21,15 +21,15 @@ Also existing expression evaluation libraries often face limitations in handling
 
 NeonBlue.Expressions is a versatile library that can be applied in many different scenarios, including:
 
-Business Rules: Implement dynamic decision-making logic based on custom conditions.
-Formulas and Calculations: Evaluate complex formulas within applications, much like a spreadsheet.
-Data Manipulation: Transform and calculate data using user-defined rules.
-Pivot Tables: Create dynamic summaries and reports from large datasets, ideal for business intelligence.
-Scripting Languages: Add customizable expression evaluation to your automation scripts or applications.
-Domain-Specific Languages (DSLs): Define specialized languages for specific fields like finance or scientific modeling.
-Mathematical Equations: Evaluate advanced mathematical expressions, including statistical and trigonometric functions.
-Scientific Simulations: Handle physics formulas, engineering calculations, and data analysis efficiently.
-Data Visualization: Generate dynamic charts and graphs with values calculated from user-defined expressions.
+- Business Rules: Implement dynamic decision-making logic based on custom conditions.
+- Formulas and Calculations: Evaluate complex formulas within applications, much like a spreadsheet.
+- Data Manipulation: Transform and calculate data using user-defined rules.
+- Pivot Tables: Create dynamic summaries and reports from large datasets, ideal for business intelligence.
+- Scripting Languages: Add customizable expression evaluation to your automation scripts or applications.
+- Domain-Specific Languages (DSLs): Define specialized languages for specific fields like finance or scientific modeling.
+- Mathematical Equations: Evaluate advanced mathematical expressions, including statistical and trigonometric functions.
+- Scientific Simulations: Handle physics formulas, engineering calculations, and data analysis efficiently.
+- Data Visualization: Generate dynamic charts and graphs with values calculated from user-defined expressions.
 
 5. **Installation:**
 ```bash
