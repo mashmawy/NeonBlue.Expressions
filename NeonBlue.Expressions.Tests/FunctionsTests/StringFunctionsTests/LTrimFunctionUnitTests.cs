@@ -62,7 +62,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
             LTrimFunction ltrimFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            ltrimFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+            ltrimFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
             Assert.Single(tokens);
             var result = tokens.Pop();
             Assert.True(result.TokenType == TokenType.NULL);

@@ -72,7 +72,7 @@ public class DayFunctionTest
         DayFunction dayFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        dayFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+        dayFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
         Assert.Single(tokens);
         var result = tokens.Pop();
         Assert.True(result.TokenType == TokenType.NULL);

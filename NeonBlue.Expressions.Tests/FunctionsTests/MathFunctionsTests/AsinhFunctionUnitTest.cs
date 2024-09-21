@@ -69,7 +69,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             AsinhFunction asinhFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            asinhFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+            asinhFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
             Assert.Single(tokens);
             var result = tokens.Pop();
             Assert.True(result.TokenType == TokenType.NULL);

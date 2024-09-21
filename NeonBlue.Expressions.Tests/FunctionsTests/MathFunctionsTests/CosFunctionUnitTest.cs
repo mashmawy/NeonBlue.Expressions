@@ -69,7 +69,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             CosFunction cosFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            cosFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+            cosFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
             Assert.Single(tokens);
             var result = tokens.Pop();
             Assert.True(result.TokenType == TokenType.NULL);

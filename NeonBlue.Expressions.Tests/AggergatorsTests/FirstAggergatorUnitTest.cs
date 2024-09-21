@@ -48,7 +48,7 @@ namespace NeonBlue.Expressions.Tests.AggergatorsTests
                 {
                     firstAggregator.Update(x[i]);
                 }
-                var res = firstAggregator.Return();
+                 firstAggregator.Return();
             });
 
         }

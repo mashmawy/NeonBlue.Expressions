@@ -69,7 +69,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             TanhFunction tanhFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            tanhFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+            tanhFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
             Assert.Single(tokens);
             var result = tokens.Pop();
             Assert.True(result.TokenType == TokenType.NULL);

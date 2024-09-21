@@ -72,7 +72,7 @@ public class HourFunctionTest
         HourFunction hourFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        hourFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+        hourFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
         Assert.Single(tokens);
         var result = tokens.Pop();
         Assert.True(result.TokenType == TokenType.NULL);

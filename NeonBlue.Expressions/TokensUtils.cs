@@ -5,7 +5,7 @@
 
         internal static readonly Dictionary<string, TokenType> SpecialTokenMap = new() {
             { "+", TokenType.Plus },
-            { "-", TokenType.Minuse },
+            { "-", TokenType.Minus },
             { "/", TokenType.Divide },
             { "*", TokenType.Multiply },
             { "%", TokenType.Percentage },

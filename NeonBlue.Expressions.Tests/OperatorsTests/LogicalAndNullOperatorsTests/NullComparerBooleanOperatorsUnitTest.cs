@@ -7,7 +7,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
         [Fact]
         public void BooleanComparerNullFunctionDefaultOption()
         {
-            NullValue_CompareOperatorsOverloads divideOperatorOverloads = new();
+            NullValueCompareOperatorsOverloads divideOperatorOverloads = new();
             var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(false, TokenType.Datetime);
             var result =
@@ -20,7 +20,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
         [Fact]
         public void BooleanComparerNullFunctionPropgateOption()
         {
-            NullValue_CompareOperatorsOverloads divideOperatorOverloads = new();
+            NullValueCompareOperatorsOverloads divideOperatorOverloads = new();
             var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(false, TokenType.Datetime);
             var result =
@@ -33,7 +33,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
         [Fact]
         public void BooleanComparerNullFunctionThrowOption()
         {
-            NullValue_CompareOperatorsOverloads divideOperatorOverloads = new();
+            NullValueCompareOperatorsOverloads divideOperatorOverloads = new();
             var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(false, TokenType.Datetime);
             Assert.Throws<NullTokenException>(() =>

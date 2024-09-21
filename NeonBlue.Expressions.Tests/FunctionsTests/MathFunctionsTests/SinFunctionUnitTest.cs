@@ -69,7 +69,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             SinFunction sinFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            sinFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+            sinFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
             Assert.Single(tokens);
             var result = tokens.Pop();
             Assert.True(result.TokenType == TokenType.NULL);

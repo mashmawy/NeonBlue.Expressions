@@ -69,7 +69,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.MathFunctionsTests
             Log2Function log2Function = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            log2Function.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+            log2Function.Update(tokens, new ExecutionOptions(NullStrategy.Default));
             Assert.Single(tokens);
             var result = tokens.Pop();
             Assert.True(result.TokenType == TokenType.NULL);

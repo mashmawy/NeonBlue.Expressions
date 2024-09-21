@@ -30,7 +30,7 @@ public class CDateFunctionTest
         Assert.True(result.TokenType == TokenType.Datetime);
             Assert.NotNull(result.Value);
         Assert.Equal(typeof(DateTime), result.Value.GetType());
-        Assert.Equal(new DateTime(2001,1,1), Convert.ToDateTime(result.Value));
+        Assert.Equal(new DateTime(2001,1,1, 0, 0, 0, DateTimeKind.Utc), Convert.ToDateTime(result.Value));
     }
 
     [Fact]

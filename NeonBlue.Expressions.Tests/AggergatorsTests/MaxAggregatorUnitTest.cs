@@ -39,7 +39,8 @@ public class MaxAggergatorUnitTest
     [Fact]
     public void TestMaxAggregatorWithDates()
     {
-        DateTime[] x = [new DateTime(2024,9,1), new DateTime(2024,9,2),new DateTime(2024,9,3), new DateTime(2024,9,4), new DateTime(2024,9,5), new DateTime(2024,9,6)];
+        DateTime[] x = [new DateTime(2024,9,1,0,0,0, DateTimeKind.Utc), new DateTime(2024,9,2, 0, 0, 0, DateTimeKind.Utc),new DateTime(2024,9,3, 0, 0, 0, DateTimeKind.Utc),
+            new DateTime(2024,9,4,0,0,0, DateTimeKind.Utc), new DateTime(2024,9,5,0,0,0, DateTimeKind.Utc), new DateTime(2024,9,6,0,0,0, DateTimeKind.Utc)];
         MaxAggregator maxAggregator = new();
         for (int i = 0; i < x.Length; i++)
         {
@@ -49,7 +50,7 @@ public class MaxAggergatorUnitTest
         Assert.NotNull(res);
         Assert.True(res is DateTime);
         DateTime avg = Convert.ToDateTime(res);
-        Assert.Equal(new DateTime(2024,9,6), avg);
+        Assert.Equal(new DateTime(2024,9,6, 0, 0, 0, DateTimeKind.Utc), avg);
     }
     [Fact]
         public void Changing_data_type_should_throw_InvalidArgumentTypeExeception()
@@ -63,7 +64,7 @@ public class MaxAggergatorUnitTest
                 {
                     maxAggregator.Update(x[i]);
                 }
-                var res = maxAggregator.Return();
+               maxAggregator.Return();
             });
 
         }

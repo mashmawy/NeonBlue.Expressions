@@ -78,7 +78,7 @@ public class HourDiffFunctionTest
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
         tokens.Push(new Token(null));
-        hourDiffFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+        hourDiffFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
         Assert.Single(tokens);
         var result = tokens.Pop();
         Assert.True(result.TokenType == TokenType.NULL);

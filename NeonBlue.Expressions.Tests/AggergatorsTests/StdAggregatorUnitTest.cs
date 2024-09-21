@@ -48,7 +48,7 @@ public class StdAggregatorUnitTest
             {
                 stdAggregator.Update(x[i]);
             }
-            var res = stdAggregator.Return();
+            stdAggregator.Return();
         });
 
     }
@@ -64,7 +64,7 @@ public class StdAggregatorUnitTest
             {
                 stdAggregator.Update(x[i]);
             }
-            var res = stdAggregator.Return();
+            stdAggregator.Return();
         });
 
     }

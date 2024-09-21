@@ -9,7 +9,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
         [Fact]
         public void LongMathNullFunctionDefaultOption()
         {
-            NullValue_MathOperatorsOverloads divideOperatorOverloads = new();
+            NullValueMathOperatorsOverloads divideOperatorOverloads = new();
             var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(200, TokenType.Long);
             var result =
@@ -21,7 +21,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
         [Fact]
         public void LongMathNullFunctionPropgateOption()
         {
-            NullValue_MathOperatorsOverloads divideOperatorOverloads = new();
+            NullValueMathOperatorsOverloads divideOperatorOverloads = new();
                var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(200, TokenType.Long);
             var result =
@@ -34,7 +34,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
         [Fact]
         public void LongMathNullFunctionThrowOption()
         {
-            NullValue_MathOperatorsOverloads divideOperatorOverloads = new();
+            NullValueMathOperatorsOverloads divideOperatorOverloads = new();
             var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(200, TokenType.Long);
             Assert.Throws<NullTokenException>(() =>

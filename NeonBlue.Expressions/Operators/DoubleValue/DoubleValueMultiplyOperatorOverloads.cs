@@ -63,7 +63,7 @@ namespace NeonBlue.Expressions.Operators.DoubleValue
         private static Token DoubleMultiplyByte(Token a1, Token a2, IExecutionOptions executionOptions)
         {
             var arg1 = Convert.ToDouble(a1.Value);
-            int arg2 = Convert.ToInt32(a2.Value);
+            var arg2 = Convert.ToByte(a2.Value);
             return new Token(arg1 * arg2, TokenType.Double);
         }
 

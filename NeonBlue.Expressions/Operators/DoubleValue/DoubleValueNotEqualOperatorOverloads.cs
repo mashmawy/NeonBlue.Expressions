@@ -6,8 +6,7 @@ namespace NeonBlue.Expressions.Operators.DoubleValue
     /// Represents the operator overloads for inequality comparisons involving Double values.
     /// </summary>
     public class DoubleValueNotEqualOperatorOverloads : OperatorsOverload
-    {
-        private readonly static double epsilon = 1E-6;
+    { 
         /// <summary>
         /// Gets a dictionary of functions that handle inequality comparisons for different token types.
         /// </summary>
@@ -51,7 +50,7 @@ namespace NeonBlue.Expressions.Operators.DoubleValue
         {
             var arg1 = Convert.ToDouble(a1.Value);
             int arg2 = Convert.ToInt32(a2.Value);
-            return new Token(Math.Abs(arg1 - arg2) >= epsilon, TokenType.Boolean);
+            return new Token(Math.Abs(arg1 - arg2) >= OperatorHelper.depsilon, TokenType.Boolean);
         }
 
         /// <summary>
@@ -65,7 +64,7 @@ namespace NeonBlue.Expressions.Operators.DoubleValue
         {
             var arg1 = Convert.ToDouble(a1.Value);
             long arg2 = Convert.ToInt64(a2.Value);
-            return new Token(Math.Abs(arg1 - arg2) >= epsilon, TokenType.Boolean);
+            return new Token(Math.Abs(arg1 - arg2) >= OperatorHelper.depsilon, TokenType.Boolean);
         }
 
         /// <summary>
@@ -93,7 +92,7 @@ namespace NeonBlue.Expressions.Operators.DoubleValue
         {
             var arg1 = Convert.ToDouble(a1.Value);
             var arg2 = Convert.ToDouble(a2.Value);
-            return new Token(Math.Abs(arg1 - arg2) >= epsilon, TokenType.Boolean);
+            return new Token(Math.Abs(arg1 - arg2) >= OperatorHelper.depsilon, TokenType.Boolean);
         }
 
         /// <summary>
@@ -107,7 +106,7 @@ namespace NeonBlue.Expressions.Operators.DoubleValue
         {
             var arg1 = Convert.ToDouble(a1.Value);
             var arg2 = Convert.ToSingle(a2.Value);
-            return new Token(Math.Abs(arg1 - arg2) >= epsilon, TokenType.Boolean);
+            return new Token(Math.Abs(arg1 - arg2) >= OperatorHelper.depsilon, TokenType.Boolean);
         }
     }
 }

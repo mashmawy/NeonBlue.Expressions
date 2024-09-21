@@ -92,7 +92,7 @@ namespace NeonBlue.Expressions.Operators.ByteValue
         {
             var arg1 = Convert.ToByte(a1.Value);
             var arg2 = Convert.ToDouble(a2.Value);
-            return new Token(arg1 != arg2, TokenType.Boolean);
+            return new Token(Math.Abs(arg1 - arg2) >= OperatorHelper.depsilon, TokenType.Boolean);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace NeonBlue.Expressions.Operators.ByteValue
         {
             var arg1 = Convert.ToByte(a1.Value);
             var arg2 = Convert.ToSingle(a2.Value);
-            return new Token(arg1 != arg2, TokenType.Boolean);
+            return new Token(Math.Abs(arg1 - arg2) >= OperatorHelper.fepsilon, TokenType.Boolean);
         }
     }
 }

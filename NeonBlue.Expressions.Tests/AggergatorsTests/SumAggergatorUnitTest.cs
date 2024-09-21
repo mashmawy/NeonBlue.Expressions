@@ -48,7 +48,7 @@ public class SumAggergatorUnitTest
             {
                 sumAggregator.Update(x[i]);
             }
-            var res = sumAggregator.Return();
+            sumAggregator.Return();
         });
 
     }
@@ -65,7 +65,7 @@ public class SumAggergatorUnitTest
             {
                 sumAggregator.Update(x[i]);
             }
-            var res = sumAggregator.Return();
+              sumAggregator.Return();
         });
 
     }

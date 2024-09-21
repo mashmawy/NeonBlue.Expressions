@@ -78,7 +78,7 @@ public class AddYearsFunctionTest
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
         tokens.Push(new Token(null));
-        addYearsFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+        addYearsFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
         Assert.Single(tokens);
         var result = tokens.Pop();
         Assert.True(result.TokenType == TokenType.NULL);

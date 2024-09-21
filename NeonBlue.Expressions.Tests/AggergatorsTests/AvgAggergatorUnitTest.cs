@@ -48,7 +48,7 @@ public class AvgAggergatorUnitTest
             {
                 avgAggregator.Update(x[i]);
             }
-            var res = avgAggregator.Return();
+            avgAggregator.Return();
         });
 
     }
@@ -65,7 +65,7 @@ public class AvgAggergatorUnitTest
             {
                 avgAggregator.Update(x[i]);
             }
-            var res = avgAggregator.Return();
+             avgAggregator.Return();
         });
 
     }

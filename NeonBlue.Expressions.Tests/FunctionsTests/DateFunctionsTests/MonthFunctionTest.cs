@@ -73,7 +73,7 @@ public class MonthFunctionTest
         MonthFunction monthFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        monthFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+        monthFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
         Assert.Single(tokens);
         var result = tokens.Pop();
         Assert.True(result.TokenType == TokenType.NULL);

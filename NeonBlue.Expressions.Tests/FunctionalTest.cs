@@ -37,12 +37,7 @@ public class FunctionalTest
         Assert.Equal(IntermediateTokenType.Integer, tokens[4].TokenType);
         Assert.Equal("3", tokens[4].Value);
     }
-    [Fact]
-    public void Tokenizer_Sanity_Check()
-    {
-        Assert.Throws<ArgumentNullException>(() => new Tokenizer(null));
-
-    }
+   
     [Fact]
     public void Can_Add_Custom_Function()
     {

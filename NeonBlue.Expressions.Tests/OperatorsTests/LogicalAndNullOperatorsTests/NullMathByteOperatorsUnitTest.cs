@@ -9,7 +9,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
         [Fact]
         public void ByteMathNullFunctionDefaultOption()
         {
-            NullValue_MathOperatorsOverloads divideOperatorOverloads = new();
+            NullValueMathOperatorsOverloads divideOperatorOverloads = new();
             var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(200, TokenType.Byte);
             var result =
@@ -21,7 +21,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
         [Fact]
         public void ByteMathNullFunctionPropgateOption()
         {
-            NullValue_MathOperatorsOverloads divideOperatorOverloads = new();
+            NullValueMathOperatorsOverloads divideOperatorOverloads = new();
                var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(200, TokenType.Byte);
             var result =
@@ -34,7 +34,7 @@ namespace NeonBlue.Expressions.Tests.OperatorsTests.LogicalAndNullOperatorsTests
         [Fact]
         public void ByteMathNullFunctionThrowOption()
         {
-            NullValue_MathOperatorsOverloads divideOperatorOverloads = new();
+            NullValueMathOperatorsOverloads divideOperatorOverloads = new();
             var operand1 = new Token(null, TokenType.NULL);
             var operand2 = new Token(200, TokenType.Byte);
             Assert.Throws<NullTokenException>(() =>

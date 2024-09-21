@@ -70,7 +70,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
             tokens.Push(new Token(null));
             tokens.Push(new Token(null));
             tokens.Push(new Token(null));
-            substringFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+            substringFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
             Assert.Single(tokens);
             var result = tokens.Pop();
             Assert.True(result.TokenType == TokenType.NULL);

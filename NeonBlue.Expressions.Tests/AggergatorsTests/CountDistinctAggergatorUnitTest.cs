@@ -49,7 +49,7 @@ namespace NeonBlue.Expressions.Tests.AggergatorsTests
             {
                 cntAggregator.Update(x[i]);
             }
-            var res = cntAggregator.Return();
+           cntAggregator.Return();
         });
 
     }

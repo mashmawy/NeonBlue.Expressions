@@ -62,7 +62,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
             TrimFunction trimFunction = new();
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
-            trimFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+            trimFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
             Assert.Single(tokens);
             var result = tokens.Pop();
             Assert.True(result.TokenType == TokenType.NULL);

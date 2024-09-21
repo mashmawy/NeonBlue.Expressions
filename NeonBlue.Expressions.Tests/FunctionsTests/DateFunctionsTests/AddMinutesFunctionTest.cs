@@ -78,7 +78,7 @@ public class AddMinutesFunctionTest
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
         tokens.Push(new Token(null));
-        addMinutesFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+        addMinutesFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
         Assert.Single(tokens);
         var result = tokens.Pop();
         Assert.True(result.TokenType == TokenType.NULL);

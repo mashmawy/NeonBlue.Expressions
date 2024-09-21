@@ -65,7 +65,7 @@ namespace NeonBlue.Expressions.Tests.FunctionsTests.StringFunctionsTests
             Stack<Token> tokens = new();
             tokens.Push(new Token(null));
             tokens.Push(new Token(null));
-            leftFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+            leftFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
             Assert.Single(tokens);
             var result = tokens.Pop();
             Assert.True(result.TokenType == TokenType.NULL);

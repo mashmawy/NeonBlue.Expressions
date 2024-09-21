@@ -74,7 +74,7 @@ public class MinutesFunctionTest
         MinutesFunction minutesFunction = new();
         Stack<Token> tokens = new();
         tokens.Push(new Token(null));
-        minutesFunction.Update(tokens, new ExecutionOptions(NullStrategy.Propagate));
+        minutesFunction.Update(tokens, new ExecutionOptions(NullStrategy.Default));
         Assert.Single(tokens);
         var result = tokens.Pop();
         Assert.True(result.TokenType == TokenType.NULL);

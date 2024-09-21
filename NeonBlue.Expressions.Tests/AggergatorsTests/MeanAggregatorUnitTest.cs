@@ -49,7 +49,7 @@ public class MeanAggregatorUnitTest
             {
                 meanAggregator.Update(x[i]);
             }
-            var res = meanAggregator.Return();
+            meanAggregator.Return();
         });
 
     }
@@ -65,7 +65,7 @@ public class MeanAggregatorUnitTest
             {
                 meanAggregator.Update(x[i]);
             }
-            var res = meanAggregator.Return();
+             meanAggregator.Return();
         });
 
     }
