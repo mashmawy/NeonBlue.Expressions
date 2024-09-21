@@ -17,12 +17,26 @@ Also existing expression evaluation libraries often face limitations in handling
 * **.NET 8 Compatibility:** Built on the latest .NET framework, ensuring compatibility and access to modern features.
 * **Ease of Use:** A straightforward API simplifies integration into .NET applications.
 
-4. **Installation:**
+4. **Key Use Cases for NeonBlue.Expressions**
+
+NeonBlue.Expressions is a versatile library that can be applied in many different scenarios, including:
+
+Business Rules: Implement dynamic decision-making logic based on custom conditions.
+Formulas and Calculations: Evaluate complex formulas within applications, much like a spreadsheet.
+Data Manipulation: Transform and calculate data using user-defined rules.
+Pivot Tables: Create dynamic summaries and reports from large datasets, ideal for business intelligence.
+Scripting Languages: Add customizable expression evaluation to your automation scripts or applications.
+Domain-Specific Languages (DSLs): Define specialized languages for specific fields like finance or scientific modeling.
+Mathematical Equations: Evaluate advanced mathematical expressions, including statistical and trigonometric functions.
+Scientific Simulations: Handle physics formulas, engineering calculations, and data analysis efficiently.
+Data Visualization: Generate dynamic charts and graphs with values calculated from user-defined expressions.
+
+5. **Installation:**
 ```bash
    dotnet add package NeonBlue.Expressions
 ```
 
-5. **Basic usage:**
+6. **Basic usage:**
 ```c#
         //creating the expression.
         Expression expression = "-1 + (-sum(x )+countd(x2) + (y -2) ) ";
@@ -45,7 +59,7 @@ Also existing expression evaluation libraries often face limitations in handling
 ```
 
 
-6. **Adding custom function:**
+7. **Adding custom function:**
 ```c#
         //creating the expression.
         Expression expression = "multiarg(y,maDate,b)";
@@ -75,7 +89,7 @@ Also existing expression evaluation libraries often face limitations in handling
         Console.WriteLine($"the result of the expression is ({result})");
 ```
 
-7. **Built-in Functions:**
+8. **Built-in Functions:**
 String Functions :
 
 | Function   Name | Arguments                          | Return Value          | Example                                   |
@@ -191,7 +205,7 @@ Aggregate Functions:
 | mean            | Column name                        | Numeric               | mean(sales)                               |
 
 
-8. **Operators:**
+9. **Operators:**
 
 | Category   | Operator | Meaning                                                 | Example          |
 |------------|----------|---------------------------------------------------------|------------------|
@@ -210,7 +224,7 @@ Aggregate Functions:
 | Logical    | "\|\|"   | Logical OR                                              | x > 0 \|\| y > 0 |
 | Logical    | !        | Logical NOT                                             | !x               | 
 
-9. **Roadmap:**
+10. **Roadmap:**
 
 - Further Unit and Functional Testing
 
@@ -220,7 +234,7 @@ Aggregate Functions:
 
 - Add User Defined Aggregate Functions Feature
 
-10. **License**
+11. **License**
 
 NeonBlue.Expressions is licensed under the MIT License and the Apache License, Version 2.0 (the "Licenses"). You may obtain a copy of the MIT License at https://opensource.org/license/mit and the Apache License, Version 2.0 at https://www.apache.org/licenses/LICENSE-2.0.
 
