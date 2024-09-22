@@ -78,11 +78,11 @@ public class FunctionalTest
         DateTime maDate = DateTime.Now;
 
         //creating the expression parameters.
-        var paramaters =
+        var parameters =
         new ExpressionParameters(new ExpressionParameter("y", y), new ExpressionParameter("b", b), new ExpressionParameter("maDate", maDate));
 
         //evaluate the expression given the parameters and expect string result.
-        var result = evaluator.Evaluate<string?>(neonBlueExpression, paramaters);
+        var result = evaluator.Evaluate<string?>(neonBlueExpression, parameters);
 
         //display the result
         Console.WriteLine($"the result of the expression is ({result})");
@@ -156,9 +156,9 @@ public class FunctionalTest
         Expression neonBlueExpression = "-1 + (-sum(x )+countd(x2) + (y -2) ) ";
 
         var evaluator = new Evaluator(new ExecutionOptions(NullStrategy.Throw));
-        var paramaters = new ExpressionParameters(new ExpressionParameter("x", x), new ExpressionParameter("x2", x2), new ExpressionParameter("y", y));
+        var parameters = new ExpressionParameters(new ExpressionParameter("x", x), new ExpressionParameter("x2", x2), new ExpressionParameter("y", y));
         var res =
-        evaluator.Evaluate<double?>(neonBlueExpression, paramaters);
+        evaluator.Evaluate<double?>(neonBlueExpression, parameters);
         Assert.NotNull(res);
         Assert.Equal(6.0, res);
 

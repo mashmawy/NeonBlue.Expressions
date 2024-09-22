@@ -46,13 +46,13 @@ NeonBlue.Expressions is a versatile library that can be applied in many differen
         double[] x2 = [20, 45, 60];
         double y = 10;
         //creating the expression parameters.
-        var paramaters =  new ExpressionParameters(new ExpressionParameter("x", x), new ExpressionParameter("x2", x2), new ExpressionParameter("y", y));
+        var parameters =  new ExpressionParameters(new ExpressionParameter("x", x), new ExpressionParameter("x2", x2), new ExpressionParameter("y", y));
 
         //creating the evaluator object.
         var evaluator = new Evaluator(new ExecutionOptions(NullStrategy.Throw));
 
         //evaluate the expression given the parameters and expect double result.
-        var result = evaluator.Evaluate<double?>(expression,paramaters);
+        var result = evaluator.Evaluate<double?>(expression,parameters);
 
         //display the result
         Console.WriteLine($"the result of the expression is ({result})");
@@ -79,11 +79,11 @@ NeonBlue.Expressions is a versatile library that can be applied in many differen
         DateTime maDate = DateTime.Now;
 
         //creating the expression parameters.
-        var paramaters= 
+        var parameters= 
         new ExpressionParameters(new ExpressionParameter("y", y),new ExpressionParameter("b", b),new ExpressionParameter("maDate", maDate));
 
         //evaluate the expression given the parameters and expect string result.
-        var result = evaluator.Evaluate<string?>(expression,paramaters);
+        var result = evaluator.Evaluate<string?>(expression,parameters);
 
         //display the result
         Console.WriteLine($"the result of the expression is ({result})");
@@ -214,6 +214,7 @@ Aggregate Functions:
 | Arithmetic | %        | Modulus   (remainder)                                   | 5 % 3            |
 | Arithmetic | /        | Division                                                | 5 / 3            |
 | Arithmetic | *        | Multiplication                                          | 5 * 3            | 
+| Arithmetic | ^        | Power                                                   | 5 ^ 3            | 
 | Comparison | "=="     | Equality   comparison                                   | x == 5           |
 | Comparison | !=       | Inequality comparison                                   | x != 5           |
 | Comparison | >        | Greater than                                            | x > 5            |
