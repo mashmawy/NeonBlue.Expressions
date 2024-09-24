@@ -102,12 +102,6 @@ The Evaluate method on the evaluator object is used to parse and evaluate an exp
 The result can be a numerical value, a string, a datetime, a boolean or null depending on the expression.
 
 
-**Variables and Constants:**
-* Variables can be defined and used within expressions to store and manipulate values. 
-* Constants are predefined values that cannot be changed. 
-* The library provides mechanisms for managing variables and constants within the evaluation context.
-
-
 **Functions and Operators:**
 The library supports a variety of built-in functions and operators, including:
 
