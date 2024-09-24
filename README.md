@@ -15,15 +15,15 @@ It is particularly useful for building calculators, scripting languages, data an
 
 **NuGet:**
 
-*1- Open your Visual Studio project.
-*2- Right-click on the project and select "Manage NuGet Packages."
-*3- Search for "NeonBlue.Expressions" and install the package.
+* Open your Visual Studio project.
+* Right-click on the project and select "Manage NuGet Packages."
+* Search for "NeonBlue.Expressions" and install the package.
 
 
 **Alternatively:**
-*1- Download the library's NuGet package from the official repository.
-*2- Add the package to your project using the Package Manager Console or by manually adding a reference.
-*3- Install using CLI.
+* Download the library's NuGet package from the official repository.
+* Add the package to your project using the Package Manager Console or by manually adding a reference.
+* Install using CLI.
 ```bash
    dotnet add package NeonBlue.Expressions
 ```
