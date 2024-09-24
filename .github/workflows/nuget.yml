@@ -1,0 +1,35 @@
+name: "Deploy to NuGet"
+
+on: ["push"]
+
+env:
+  PROJECT_PATH: 'NeonBlue.Expressions/NeonBlue.Expressions.csproj'
+  OUTPUT_DIRECTORY: ${{ github.workspace }}\output
+  NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
+
+jobs:
+  deploy:
+    name: 'Deploy'
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: 'Checkout'
+      uses: actions/checkout@v2
+    - name: 'Install dotnet'
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.*'
+
+    - name: 'Restore packages'
+      run: dotnet restore ${{env.PROJECT_PATH}}
+    
+    - name: 'Build project'
+      run: dotnet build ${{env.PROJECT_PATH}} --no-restore --configuration Release
+    
+    - name: 'Test project'
+      run: dotnet test ${{env.PROJECT_PATH}}  --no-build --no-restore
+    
+    - name: 'Pack project'
+      run: dotnet pack  ${{env.PROJECT_PATH}} --no-build --no-restore --configuration Release --include-symbols --output ${{ env.OUTPUT_DIRECTORY }}
+    
+    - name: 'Push packages'
+      run: dotnet nuget push ${{ env.OUTPUT_DIRECTORY }}\*.nupkg -k ${{secrets.NUGET_AUTH_TOKEN}} -s ${{ env.NUGET_SOURCE_URL }} 
