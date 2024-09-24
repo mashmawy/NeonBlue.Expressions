@@ -115,7 +115,7 @@ The library supports a variety of built-in functions and operators, including:
 * You can also define and use custom functions within your expressions.
 
 
-
+**For more information, please refer to our [Wiki](https://github.com/mashmawy/NeonBlue.Expressions/wiki).**
 
 ## **License**
 NeonBlue.Expressions is licensed under the MIT License and the Apache License, Version 2.0 (the "Licenses"). You may obtain a copy of the MIT License at https://opensource.org/license/mit and the Apache License, Version 2.0 at https://www.apache.org/licenses/LICENSE-2.0.

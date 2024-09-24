@@ -37,7 +37,18 @@ public class FunctionalTest
         Assert.Equal(IntermediateTokenType.Integer, tokens[4].TokenType);
         Assert.Equal("3", tokens[4].Value);
     }
+    [Fact]
+    public void Can_Read_DateTime_Constant()
+    {
+        Expression neonBlueExpression = "adddays(#12-30-2024#,1)";
 
+        var evaluator = new Evaluator(new ExecutionOptions(NullStrategy.Throw));  
+        var res =
+        evaluator.Evaluate<DateTime?>(neonBlueExpression,
+        new ExpressionParameters());
+        Assert.NotNull(res);
+        Assert.Equal(new DateTime(2024, 12, 31, 0, 0, 0, DateTimeKind.Utc), res);
+    }
     [Fact]
     public void Can_Add_Custom_Function()
     {
@@ -105,19 +116,19 @@ public class FunctionalTest
         var result = evaluator.Evaluate<double?>(neonBlueExpression, new ExpressionParameters());
 
 
-        Assert.NotNull(result); 
+        Assert.NotNull(result);
         Assert.Equal(Math.Pow(6.4, 8.4) * 20 + 3, result);
 
     }
 
     [Fact]
     public void Should_Handle_keywords()
-    { 
+    {
         Expression neonBlueExpression = new($"iif(true,pi,null)");
         var evaluator = new Evaluator();
 
         var res =
-        evaluator.Evaluate(neonBlueExpression );
+        evaluator.Evaluate(neonBlueExpression);
         Assert.NotNull(res);
         Assert.Equal(typeof(double), res!.GetType());
         Assert.Equal(Math.PI, (double)res);

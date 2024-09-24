@@ -108,12 +108,20 @@ namespace NeonBlue.Expressions
                 // If we're inside a function, append the token to the in-function expression
                 if (inFunction)
                 {
+                    if (token.TokenType == IntermediateTokenType.DateTime) inFunctionExpression.Append('#');
+                    if (token.TokenType == IntermediateTokenType.String) inFunctionExpression.Append('\'');
                     inFunctionExpression.Append(token.Value);
+                    if (token.TokenType == IntermediateTokenType.String) inFunctionExpression.Append('\'');
+                    if (token.TokenType == IntermediateTokenType.DateTime) inFunctionExpression.Append('#');
                 }
                 else
                 {
-                    // Otherwise, append the token to the updated expression
+                    // Otherwise, append the token to the updated expression 
+                    if (token.TokenType == IntermediateTokenType.DateTime) updatedExpression.Append('#');
+                    if (token.TokenType == IntermediateTokenType.String) updatedExpression.Append('\'');
                     updatedExpression.Append(token.Value);
+                    if (token.TokenType == IntermediateTokenType.String) updatedExpression.Append('\'');
+                    if (token.TokenType == IntermediateTokenType.DateTime) updatedExpression.Append('#');
                 }
 
                 // If the token is a variable, add it to the current function's variables
@@ -159,7 +167,18 @@ namespace NeonBlue.Expressions
             // Iterate through each intermediate token
             foreach (var token in intermediaTokens)
             {
-             
+
+
+                // Handle datetime values
+                if (token.TokenType == IntermediateTokenType.DateTime)
+                {
+                    // Create a new Token with the string value
+                    var varToken = new Token(Convert.ToDateTime(token.Value), TokenType.Datetime, token.Pos, true);
+                    expressionList.Add(varToken);
+                    continue;
+                }
+
+
                 // Handle string literals
                 if (token.TokenType == IntermediateTokenType.String)
                 {

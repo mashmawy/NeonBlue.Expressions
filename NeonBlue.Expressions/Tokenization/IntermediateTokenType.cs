@@ -34,5 +34,10 @@ namespace NeonBlue.Expressions
         /// A string token.
         /// </summary>
         String,
+
+        /// <summary>
+        /// A DateTime token.
+        /// </summary>
+        DateTime,
     }
 }

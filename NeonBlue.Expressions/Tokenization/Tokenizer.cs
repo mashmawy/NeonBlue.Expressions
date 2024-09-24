@@ -65,6 +65,11 @@ namespace NeonBlue.Expressions
                     var token = ReadString();
                     _tokens.Add(token);
                 }
+                else if (currentChar == '#')
+                {
+                    var token = ReadDate();
+                    _tokens.Add(token);
+                }
                 else if (IsCompositOperator(currentChar))
                 {
                     var startPos = _currentPosition;
@@ -90,7 +95,7 @@ namespace NeonBlue.Expressions
                         if (previousToken is null || (!previousToken.IsNumber() && previousToken.Value != ")"))
                         {
                             _tokens.Add(new IntermediateToken(IntermediateTokenType.Double, "0", -1));
-                        } 
+                        }
                     }
                     // Single-character operators or delimiters 
                     var tokenType = IntermediateTokenType.Operator;
@@ -199,6 +204,40 @@ namespace NeonBlue.Expressions
             }
 
             return new IntermediateToken(IntermediateTokenType.String, stringBuilder.ToString(), startPos);
+        }
+
+        private IntermediateToken ReadDate()
+        {
+            var startPos = _currentPosition;
+            _currentPosition++; // Skip the opening quote
+
+            var stringBuilder = new StringBuilder();
+            while (_currentPosition < _expression.Length)
+            {
+                var currentChar = _expression[_currentPosition];
+                if (currentChar == '#')
+                {
+                    break;
+                }
+                else
+                {
+                    stringBuilder.Append(currentChar);
+                }
+
+                _currentPosition++;
+            }
+
+            if (_currentPosition < _expression.Length && _expression[_currentPosition] == '#')
+            {
+                _currentPosition++; // Skip the closing quote
+            }
+            else
+            {
+                // Throw an error or handle missing closing quote
+                throw new ArgumentException("Unterminated string literal");
+            }
+
+            return new IntermediateToken(IntermediateTokenType.DateTime, stringBuilder.ToString(), startPos);
         }
     }
 }
