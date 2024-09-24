@@ -103,22 +103,22 @@ The result can be a numerical value, a string, a datetime, a boolean or null dep
 
 
 **Variables and Constants:**
-Variables can be defined and used within expressions to store and manipulate values. 
-Constants are predefined values that cannot be changed. 
-The library provides mechanisms for managing variables and constants within the evaluation context.
+* Variables can be defined and used within expressions to store and manipulate values. 
+* Constants are predefined values that cannot be changed. 
+* The library provides mechanisms for managing variables and constants within the evaluation context.
 
 
 **Functions and Operators:**
 The library supports a variety of built-in functions and operators, including:
 
-Arithmetic operators: +, -, *, /, %, ^
-Logical operators: &&, ||, !
-Comparison operators: ==, !=, <, >, >=, <=
-Mathematical functions: sin, cos, tan, log, sqrt, etc.
-Datetime functions: adddays, addhours, dayname, etc.
-Boolean functions: iif, and, isnull, etc.
-String functions: concat, contain, ltrim, left, etc.
-You can also define and use custom functions within your expressions.
+* Arithmetic operators: +, -, *, /, %, ^
+* Logical operators: &&, ||, !
+* Comparison operators: ==, !=, <, >, >=, <=
+* Mathematical functions: sin, cos, tan, log, sqrt, etc.
+* Datetime functions: adddays, addhours, dayname, etc.
+* Boolean functions: iif, and, isnull, etc.
+* String functions: concat, contain, ltrim, left, etc.
+* You can also define and use custom functions within your expressions.
 
 
 
