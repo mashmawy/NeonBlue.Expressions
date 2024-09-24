@@ -6,9 +6,9 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<PropertyGroup>
-		<Version> 0.1.4</Version>
+		<Version> 0.1.5</Version>
 		<Authors>Mohamed Hassan Ashmawy</Authors>
-		<PackageVersion>0.1.4</PackageVersion>
+		<PackageVersion>0.1.5</PackageVersion>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags> Expression Evaluator </PackageTags>
