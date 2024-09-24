@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information 
-namespace NeonBlue.Expressions.Examples.RuleEngine
+﻿namespace NeonBlue.Expressions.Examples.RuleEngine
 {
     public class Rule
     {

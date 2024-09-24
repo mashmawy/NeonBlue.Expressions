@@ -12,9 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NeonBlue.Expressions.Examples", "NeonBlue.Expressions.Examples", "{3D556811-C215-494B-99F6-A9E70D9A9463}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{3D556811-C215-494B-99F6-A9E70D9A9463}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeonBlue.Expressions.Examples.RuleEngine", "NeonBlue.Expressions.Examples\NeonBlue.Expressions.Examples.RuleEngine\NeonBlue.Expressions.Examples.RuleEngine.csproj", "{FB767DA6-CB6D-476F-987D-20A117D8E88D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeonBlue.Expressions.Examples.RuleEngine", "Examples\NeonBlue.Expressions.Examples.RuleEngine\NeonBlue.Expressions.Examples.RuleEngine.csproj", "{FB767DA6-CB6D-476F-987D-20A117D8E88D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
