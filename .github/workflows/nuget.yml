@@ -4,7 +4,7 @@ on: ["push"]
 
 env:
   PROJECT_PATH: 'NeonBlue.Expressions/NeonBlue.Expressions.csproj'
-  OUTPUT_DIRECTORY: ${{ github.workspace }}\output
+  OUTPUT_DIRECTORY: ${{ github.workspace }}/output
   NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
 
 jobs:
@@ -32,4 +32,4 @@ jobs:
       run: dotnet pack  ${{env.PROJECT_PATH}} --no-build --no-restore --configuration Release --include-symbols --output ${{ env.OUTPUT_DIRECTORY }}
     
     - name: 'Push packages'
-      run: dotnet nuget push ${{ env.OUTPUT_DIRECTORY }}\*.nupkg -k ${{secrets.NUGET_AUTH_TOKEN}} -s ${{ env.NUGET_SOURCE_URL }} 
+      run: dotnet nuget push ${{ env.OUTPUT_DIRECTORY }}/*.nupkg -k ${{secrets.NUGET_AUTH_TOKEN}} -s ${{ env.NUGET_SOURCE_URL }} 
