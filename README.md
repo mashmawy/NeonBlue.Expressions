@@ -87,7 +87,7 @@ To get started you first need to import the library namespace:
 * **Scripting and automation:** Implement scripting languages or automation tools that rely on expression evaluation.
 * **Data analysis and processing:** Perform complex calculations and transformations on data.
 * **Custom domain-specific languages:** Develop DSLs that use expression evaluation for defining rules or logic.
-* **Business Rules::** Implement dynamic decision-making logic based on custom conditions.
+* **Business Rules:** Implement dynamic decision-making logic based on custom conditions.
 
 ## **Core Concepts**
 
