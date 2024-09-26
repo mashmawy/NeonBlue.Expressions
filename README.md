@@ -29,7 +29,7 @@ It is particularly useful for building calculators, scripting languages, data an
 ```
 
 ## **Getting Started**
-To get started you first need to import the library namespcae:
+To get started you first need to import the library namespace:
 
 ```c#
     using NeonBlue.Expressions;
