@@ -1,0 +1,2 @@
+﻿C:\Users\speed\source\myprojects\NeonBlue\Examples\NeonBlue.Expressions.Examples.RuleEngine\Program.cs
+C:\Users\speed\source\myprojects\NeonBlue\Examples\NeonBlue.Expressions.Examples.RuleEngine\Rule.cs

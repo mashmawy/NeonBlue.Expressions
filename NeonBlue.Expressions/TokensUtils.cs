@@ -43,23 +43,21 @@
             {
                 return new(TokenType.NULL, null);
             }
-            else
-            if (data is string)
+            else if (data is string)
             {
                 string datastr = data.ToString()!;
                 if (datastr.Trim().StartsWith('\'') && datastr.Trim().EndsWith('\''))
                 {
                     return (TokenType.String, datastr.Replace("'", ""));
                 }
-                else
-                if (double.TryParse(datastr, out double db))
+                else  if (double.TryParse(datastr, out double db))
                 {
                     if (datastr.Contains('.'))
                         return (TokenType.Double, db);
                     else
                         return (TokenType.Integer, Convert.ToInt32(data));
                 }
-                else if (DateTime.TryParse(data.ToString(), out DateTime date))
+                else if (DateTime.TryParse(data.ToString(), Thread.CurrentThread.CurrentCulture, out DateTime date))
                 {
                     return (TokenType.Datetime, date);
                 }
@@ -88,8 +86,7 @@
             {
                 return (TokenType.NULL, null, false, false);
             }
-            else
-            if (SpecialTokenMap.TryGetValue(data.ToString()!, out TokenType specialType))
+            else if (SpecialTokenMap.TryGetValue(data.ToString()!, out TokenType specialType))
             {
                 return (specialType, data, true, false);
             }

@@ -2,7 +2,7 @@
 
 **Overview**
 
-ExpressionEvaluator is a comprehensive library designed to efficiently parse, evaluate, and interpret mathematical expressions in C#. 
+NeonBlue.Expressions is a comprehensive library designed to efficiently parse, evaluate, and interpret mathematical expressions in C#. 
 It provides a flexible framework for handling various data types, operators, functions, and variables within expressions.
 
 
