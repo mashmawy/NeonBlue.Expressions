@@ -53,7 +53,7 @@ namespace NeonBlue.Expressions
             foreach (var token in tokens)
             {
                 // Check if it's the start of an aggregated function
-                if (token.Value is not null && AggregatedExpressionPart.IsAggregate(token.Value.Trim()))
+                if (token.Value is not null && token.TokenType != IntermediateTokenType.String &&  AggregatedExpressionPart.IsAggregate(token.Value.Trim()))
                 {
                     // Set current function and indicate we're inside a function
                     currentFunction = token.Value.Trim();
